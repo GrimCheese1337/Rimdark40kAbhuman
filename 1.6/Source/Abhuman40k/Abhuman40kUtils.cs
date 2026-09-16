@@ -6,13 +6,12 @@ using Verse;
 
 namespace Abhuman40k;
 
+[StaticConstructorOnStartup]
 public static class Abhuman40kUtils
 {
     private static readonly List<Pawn> tmpPawns = new List<Pawn>();
 
-    private static Material pendingLinkLineMat;
-
-    private static Material PendingLinkLineMat => pendingLinkLineMat ??= MaterialPool.MatFrom(GenDraw.LineTexPath, ShaderDatabase.Transparent, new Color(1f, 1f, 1f, 0.35f));
+    private static readonly Material PendingLinkLineMat = MaterialPool.MatFrom(GenDraw.LineTexPath, ShaderDatabase.Transparent, new Color(1f, 1f, 1f, 0.35f));
 
     /// <summary>
     /// Draws selection lines from <paramref name="from"/> to every colonist-owned building of
