@@ -7,6 +7,7 @@
     <label>herdstone</label>
     <description>[Placeholder]</description>
     <thingClass>Abhuman40k.Building_HerdstoneEnemy</thingClass>
+    <rotatable>false</rotatable>
     <altitudeLayer>BuildingOnTop</altitudeLayer>
     <passability>PassThroughOnly</passability>
     <tickerType>Normal</tickerType>
@@ -17,9 +18,10 @@
     <graphicData>
       <texPath>Things/Building/BEWH_HerdStone_Raid</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(3,4)</drawSize>
+      <drawSize>(4,5)</drawSize>
+      <drawOffset>(0, 0, 0.6)</drawOffset>
     </graphicData>
-    <size>(3, 4)</size>
+    <size>(3, 3)</size>
     <canOverlapZones>false</canOverlapZones>
     <defaultPlacingRot>North</defaultPlacingRot>
     <designationCategory>BEWH_RimDarkCategory</designationCategory>
@@ -55,6 +57,7 @@
     <label>herdstone</label>
     <description>[Placeholder]</description>
     <thingClass>Abhuman40k.Building_Herdstone</thingClass>
+    <rotatable>false</rotatable>
     <altitudeLayer>BuildingOnTop</altitudeLayer>
     <passability>Impassable</passability>
     <blockWind>true</blockWind>
@@ -66,10 +69,10 @@
       <texPath>Things/Building/BEWH_HerdStone_Player</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>CutoutComplex</shaderType>
-      <drawSize>(4.5,5.5)</drawSize>
-      <drawOffset>(0, 0, 0.4)</drawOffset>
+      <drawSize>(4,5)</drawSize>
+      <drawOffset>(0, 0, 0.6)</drawOffset>
     </graphicData>
-    <size>(3, 4)</size>
+    <size>(3, 3)</size>
     <drawerType>RealtimeOnly</drawerType>
     <canOverlapZones>false</canOverlapZones>
     <defaultPlacingRot>North</defaultPlacingRot>
@@ -112,7 +115,7 @@
       </li>
       <li Class="CompProperties_FireOverlay">
         <fireSize>0.8</fireSize>
-        <offset>(0,0,-1.23)</offset>
+        <offset>(0,0,-1.0)</offset>
       </li>
       <li Class="CompProperties_Glower">
         <glowRadius>10</glowRadius>

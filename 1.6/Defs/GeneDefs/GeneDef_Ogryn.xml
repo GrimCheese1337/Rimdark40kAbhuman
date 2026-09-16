@@ -37,14 +37,9 @@
         <renderNodeProperties>
             <li>
                 <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
-                <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
-                <texPaths>
-                    <li>Things/Pawn/Humanlike/Ogryn/HeadAttachments/Ears/BEWH_Male_OgrynEars</li>
-                </texPaths>
-                <texPathsFemale>
-                    <li>Things/Pawn/Humanlike/Ogryn/HeadAttachments/Ears/BEWH_Female_OgrynEars1</li>
-                    <li>Things/Pawn/Humanlike/Ogryn/HeadAttachments/Ears/BEWH_Female_OgrynEars2</li>
-                </texPathsFemale>
+                <workerClass>Core40k.PawnRenderNodeWorker_HeadCovered</workerClass>
+                <texPath>Things/Pawn/Humanlike/Ogryn/HeadAttachments/Ears/BEWH_OgrynEars</texPath>
+                <drawSize>0.5</drawSize>
                 <colorType>Skin</colorType>
                 <parentTagDef>Head</parentTagDef>
                 <useSkinShader>true</useSkinShader>
@@ -58,14 +53,16 @@
             </li>
             <li>
                 <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
-                <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+                <workerClass>Core40k.PawnRenderNodeWorker_HeadCovered</workerClass>
                 <texPaths>
                     <li>Things/Pawn/Humanlike/Ogryn/HeadAttachments/Ears/BEWH_OgrynEarringsNone</li>
                 </texPaths>
                 <texPathsFemale>
                     <li>Things/Pawn/Humanlike/Ogryn/HeadAttachments/Ears/BEWH_OgrynEarringsNone</li>
+                    <li>Things/Pawn/Humanlike/Ogryn/HeadAttachments/Ears/BEWH_Female_OgrynEarrings1</li>
                     <li>Things/Pawn/Humanlike/Ogryn/HeadAttachments/Ears/BEWH_Female_OgrynEarrings2</li>
                 </texPathsFemale>
+                <drawSize>0.5</drawSize>
                 <parentTagDef>Head</parentTagDef>
                 <rotDrawMode>Fresh, Rotting</rotDrawMode>
                 <drawData>

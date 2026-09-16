@@ -48,7 +48,7 @@
             </li>
             <li>
                 <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
-                <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+                <workerClass>Core40k.PawnRenderNodeWorker_HeadCovered</workerClass>
                 <texPaths>
                     <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Ears/BEWH_BeastmanEars1</li>
                     <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Ears/BEWH_BeastmanEars2</li>
@@ -269,7 +269,7 @@
             </li>
             <li>
                 <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
-                <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+                <workerClass>Core40k.PawnRenderNodeWorker_HeadCovered</workerClass>
                 <texPaths>
                     <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/Ears/BEWH_MinotaurEars1</li>
                     <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/Ears/BEWH_MinotaurEars2</li>
@@ -309,7 +309,7 @@
             </li>
             <li>
                 <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
-                <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+                <workerClass>Core40k.PawnRenderNodeWorker_HeadCovered</workerClass>
                 <texPaths>
                     <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/HeadDecorations/BEWH_MinotaurDecoEmpty</li>
                     <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/HeadDecorations/BEWH_MinotaurDecoEmpty</li>
