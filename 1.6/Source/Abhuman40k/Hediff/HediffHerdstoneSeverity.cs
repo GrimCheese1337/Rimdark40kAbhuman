@@ -1,5 +1,5 @@
-﻿using Verse;
-using Core40k;
+﻿using UnityEngine;
+using Verse;
 
 namespace Abhuman40k;
 
@@ -7,7 +7,9 @@ public class HediffHerdstoneSeverity : HediffWithComps
 {
     private const int RecacheIntervalTicks = 120;
 
-    private float lastKnownSeverity = 0.1f;
+    private const float MinSeverity = 0.01f;
+
+    private float lastKnownSeverity = MinSeverity;
 
     [Unsaved(false)]
     private int lastRecacheTick = -1;
@@ -16,7 +18,7 @@ public class HediffHerdstoneSeverity : HediffWithComps
     {
         get
         {
-            // Off the map (caravan, transport pod) there is nothing to count. Returning 0 here
+            // Off the map (caravan, transport pod) there is nothing to measure. Returning 0 here
             // made Hediff.ShouldRemove true and silently deleted the hediff, so hold the last
             // value instead.
             var map = pawn?.Map;
@@ -25,8 +27,8 @@ public class HediffHerdstoneSeverity : HediffWithComps
                 return lastKnownSeverity;
             }
 
-            // Counting buildings walks the whole colonist building list, and this getter is on a
-            // very hot path, so it only recounts a few times a second.
+            // This getter is on a very hot path, so the network is only re-measured a few times
+            // a second.
             var ticksGame = Find.TickManager?.TicksGame ?? 0;
             if (lastRecacheTick >= 0 && ticksGame - lastRecacheTick < RecacheIntervalTicks)
             {
@@ -35,25 +37,28 @@ public class HediffHerdstoneSeverity : HediffWithComps
 
             lastRecacheTick = ticksGame;
 
-            var herdstoneCount = map.listerBuildings.CountBuildingColonistOfDef(Abhuman40kDefOf.BEWH_HerdstonePlayer);
-            var herdstoneConduitCount = map.listerBuildings.CountBuildingColonistOfDef(Abhuman40kDefOf.BEWH_HerdstoneConduitPlayer);
+            var fraction = map.GetComponent<MapComponent_HerdstoneNetwork>()?.PowerFractionFor(pawn) ?? 0f;
 
-            lastKnownSeverity = SeverityCurve.Evaluate(herdstoneCount + herdstoneConduitCount);
+            // Nothing reaching the pawn right now: hold the last share so the buff runs out on
+            // the hediff's own timer instead of snapping off the moment they step outside.
+            if (fraction > 0f)
+            {
+                lastKnownSeverity = Mathf.Clamp(fraction, MinSeverity, 1f);
+            }
+
             return lastKnownSeverity;
         }
         set => base.Severity = value;
     }
 
-    private static readonly SimpleCurve SeverityCurve =
-    [
-        new CurvePoint(0f, 0.1f),
-        new CurvePoint(1f, 1f),
-        new CurvePoint(10f, 10f),
-    ];
-
     public override void ExposeData()
     {
         base.ExposeData();
-        Scribe_Values.Look(ref lastKnownSeverity, "lastKnownSeverity", 0.1f);
+        Scribe_Values.Look(ref lastKnownSeverity, "lastKnownSeverity", MinSeverity);
+
+        if (Scribe.mode == LoadSaveMode.PostLoadInit)
+        {
+            lastKnownSeverity = Mathf.Clamp(lastKnownSeverity, MinSeverity, 1f);
+        }
     }
 }

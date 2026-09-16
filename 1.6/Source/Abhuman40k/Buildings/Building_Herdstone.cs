@@ -184,6 +184,12 @@ public class Building_Herdstone : Building
         return stringBuilder.ToString();
     }
     
+    public override void DrawExtraSelectionOverlays()
+    {
+        base.DrawExtraSelectionOverlays();
+        Abhuman40kUtils.DrawLinesToBuildingsOfDef(this, Abhuman40kDefOf.BEWH_HerdstoneConduitPlayer);
+    }
+
     public override IEnumerable<Gizmo> GetGizmos()
     {
         foreach (var gizmo in base.GetGizmos())

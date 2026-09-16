@@ -81,6 +81,7 @@
     <Compile Include="Buildings\Building_HerdstoneConduit.cs" />
     <Compile Include="Buildings\Building_HerdstoneEnemy.cs" />
     <Compile Include="Buildings\Building_CriticalReactor.cs" />
+    <Compile Include="Buildings\MapComponent_HerdstoneNetwork.cs" />
     <Compile Include="Comps\CompAbilityEffect_GiveBodyguardHediff.cs" />
     <Compile Include="Comps\CompAbilityEffect_WarpEyeGaze.cs" />
     <Compile Include="Comps\CompCustomCauseHediff_Extra_AoE.cs" />

@@ -3,74 +3,82 @@
 
     <HediffDef>
         <defName>BEWH_BeastmanHerdstoneAuraBuff</defName>
-        <label>Power of the Herdstone</label>
+        <label>power of the herdstone</label>
         <hediffClass>Abhuman40k.HediffHerdstoneSeverity</hediffClass>
-        <description>[Placeholder]</description>
+        <description>The stonework's chanting reaches this far. Flesh knits faster than it should, wounds close over, and pain arrives late.\n\nThe herd's strength is fixed. Every conduit raised spreads that same strength over more ground, so the earth around an undivided stone is the hardest ground of all.</description>
         <scenarioCanAdd>false</scenarioCanAdd>
         <everCurableByItem>false</everCurableByItem>
         <isBad>false</isBad>
+        <maxSeverity>1</maxSeverity>
         <stages>
             <li>
-                <minSeverity>0.1</minSeverity>
-            </li>
-            <li>
-                <minSeverity>1</minSeverity>
+                <label>divided</label>
+                <minSeverity>0</minSeverity>
+                <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
                 <statOffsets>
-                    <ArmorRating_Blunt>10</ArmorRating_Blunt>
+                    <PainShockThreshold>0.20</PainShockThreshold>
+                    <IncomingDamageFactor>-0.10</IncomingDamageFactor>
+                    <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+                    <ArmorRating_Sharp>0.10</ArmorRating_Sharp>
+                    <ArmorRating_Heat>0.15</ArmorRating_Heat>
+                    <MoveSpeed>0.30</MoveSpeed>
+                    <InjuryHealingFactor>0.50</InjuryHealingFactor>
+                    <ImmunityGainSpeed>0.25</ImmunityGainSpeed>
+                    <RestFallRateFactor>-0.15</RestFallRateFactor>
                 </statOffsets>
             </li>
             <li>
-                <minSeverity>2</minSeverity>
+                <label>undivided</label>
+                <minSeverity>0.7</minSeverity>
+                <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
                 <statOffsets>
-                    <ArmorRating_Blunt>9</ArmorRating_Blunt>
+                    <PainShockThreshold>0.20</PainShockThreshold>
+                    <IncomingDamageFactor>-0.10</IncomingDamageFactor>
+                    <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+                    <ArmorRating_Sharp>0.10</ArmorRating_Sharp>
+                    <ArmorRating_Heat>0.15</ArmorRating_Heat>
+                    <MoveSpeed>0.30</MoveSpeed>
+                    <InjuryHealingFactor>0.50</InjuryHealingFactor>
+                    <ImmunityGainSpeed>0.25</ImmunityGainSpeed>
+                    <RestFallRateFactor>-0.15</RestFallRateFactor>
                 </statOffsets>
+                <capMods>
+                    <li>
+                        <capacity>BloodPumping</capacity>
+                        <offset>0.10</offset>
+                    </li>
+                    <li>
+                        <capacity>Breathing</capacity>
+                        <offset>0.10</offset>
+                    </li>
+                </capMods>
             </li>
-            <li>
-                <minSeverity>3</minSeverity>
-                <statOffsets>
-                    <ArmorRating_Blunt>8</ArmorRating_Blunt>
-                </statOffsets>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_DisappearsOnDeath" />
+            <li Class="HediffCompProperties_Disappears">
+                <showRemainingTime>True</showRemainingTime>
             </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef>
+        <defName>BEWH_BeastmanRaidHerdstoneAuraBuff</defName>
+        <label>bray of the herdstone</label>
+        <hediffClass>Abhuman40k.HediffHerdstoneSeverity</hediffClass>
+        <description>The shamans' chanting knits this one back together faster than it can be torn apart. It does not make them stronger, only far harder to put down.</description>
+        <scenarioCanAdd>false</scenarioCanAdd>
+        <everCurableByItem>false</everCurableByItem>
+        <isBad>false</isBad>
+        <maxSeverity>1</maxSeverity>
+        <stages>
             <li>
-                <minSeverity>4</minSeverity>
+                <minSeverity>0</minSeverity>
+                <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
                 <statOffsets>
-                    <ArmorRating_Blunt>7</ArmorRating_Blunt>
-                </statOffsets>
-            </li>
-            <li>
-                <minSeverity>5</minSeverity>
-                <statOffsets>
-                    <ArmorRating_Blunt>6</ArmorRating_Blunt>
-                </statOffsets>
-            </li>
-            <li>
-                <minSeverity>6</minSeverity>
-                <statOffsets>
-                    <ArmorRating_Blunt>5</ArmorRating_Blunt>
-                </statOffsets>
-            </li>
-            <li>
-                <minSeverity>7</minSeverity>
-                <statOffsets>
-                    <ArmorRating_Blunt>4</ArmorRating_Blunt>
-                </statOffsets>
-            </li>
-            <li>
-                <minSeverity>8</minSeverity>
-                <statOffsets>
-                    <ArmorRating_Blunt>3</ArmorRating_Blunt>
-                </statOffsets>
-            </li>
-            <li>
-                <minSeverity>9</minSeverity>
-                <statOffsets>
-                    <ArmorRating_Blunt>2</ArmorRating_Blunt>
-                </statOffsets>
-            </li>
-            <li>
-                <minSeverity>10</minSeverity>
-                <statOffsets>
-                    <ArmorRating_Blunt>1</ArmorRating_Blunt>
+                    <PainShockThreshold>0.30</PainShockThreshold>
+                    <InjuryHealingFactor>0.60</InjuryHealingFactor>
+                    <ImmunityGainSpeed>0.30</ImmunityGainSpeed>
                 </statOffsets>
             </li>
         </stages>

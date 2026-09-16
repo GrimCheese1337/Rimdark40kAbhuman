@@ -6,7 +6,24 @@ namespace Abhuman40k;
 public class CompCustomCauseHediff_Extra_AoE : CompCustomCauseHediff_AoE
 {
     private new CompProperties_CustomCauseHediff_Extra_AoE Props => (CompProperties_CustomCauseHediff_Extra_AoE)props;
-    
+
+    /// <summary>Share this source carries of its network's fixed power pool.</summary>
+    public int NetworkWeight => Props.networkWeight;
+
+    /// <summary>
+    /// Whether this source is currently projecting onto the pawn, using the same gene, faction
+    /// and range checks that decide whether the hediff gets applied in the first place.
+    /// </summary>
+    public bool CoversPawn(Pawn pawn)
+    {
+        if (pawn is not { Spawned: true } || parent == null || pawn.Map != parent.MapHeld)
+        {
+            return false;
+        }
+
+        return IsPawnAffectedAndInRange(pawn, cacheRoom: false);
+    }
+
     public override bool IsPawnAffected(Pawn target)
     {
         if (target.genes == null)
@@ -19,9 +36,14 @@ public class CompCustomCauseHediff_Extra_AoE : CompCustomCauseHediff_AoE
             return false;
         }
 
+        if (Props.sameFactionOnly && target.Faction != parent.Faction)
+        {
+            return false;
+        }
+
         return base.IsPawnAffected(target);
     }
-    
+
     protected override void TickInterval(int delta)
     {
         try
