@@ -13,7 +13,7 @@
         <renderNodeProperties>
             <li>
                 <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
-                <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+                <workerClass>Core40k.PawnRenderNodeWorker_HeadCovered</workerClass>
                 <texPaths>
                     <li>Things/Pawn/Humanlike/Ratling/HeadAttachments/Ears/BEWH_RatlingEars</li>
                 </texPaths>
