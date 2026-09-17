@@ -22,7 +22,6 @@
     <size>(3, 4)</size>
     <canOverlapZones>false</canOverlapZones>
     <defaultPlacingRot>North</defaultPlacingRot>
-    <designationCategory>BEWH_RimDarkCategory</designationCategory>
     <uiOrder>2100</uiOrder>
     <statBases>
       <MaxHitPoints>2000</MaxHitPoints>
