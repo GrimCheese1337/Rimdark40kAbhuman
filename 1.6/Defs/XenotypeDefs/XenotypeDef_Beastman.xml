@@ -11,6 +11,7 @@
         <factionlessGenerationWeight>0.2</factionlessGenerationWeight>
         <genes>
             <li>BEWH_BeastmanGoatPhysique</li>
+            <li>BEWH_BeastmanHorns</li>
             <li>BEWH_BeastmanHooved</li>
             <li>BEWH_BeastmanInnateBloodlust</li>
             <li>BEWH_BeastmanRowdy</li>
@@ -38,6 +39,7 @@
         <factionlessGenerationWeight>0.05</factionlessGenerationWeight>
         <genes Inherit="False">
             <li>BEWH_MinotaurPhysique</li>
+            <li>BEWH_MinotaurHorns</li>
             <li>BEWH_BeastmanHooved</li>
             <li>BEWH_BeastmanInnateBloodlust</li>
             <li>BEWH_BeastmanRowdy</li>
