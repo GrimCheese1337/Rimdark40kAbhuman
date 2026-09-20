@@ -5,15 +5,21 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_FelinidClawed</defName>
         <label>clawed</label>
-        <description>[Placeholder]</description>
+        <description>Carriers of this gene have retractable claws on their fingers. Not much use for fine work, but they leave a mark all the same.</description>
         <iconPath>UI/Genes/Felinid/BEWH_Clawed</iconPath>
         <biostatCpx>2</biostatCpx>
         <biostatMet>-1</biostatMet>
         <displayOrderInCategory>81</displayOrderInCategory>
 
         <statOffsets>
-            <MeleeDamageFactor>0.1</MeleeDamageFactor>
+            <MeleeDamageFactor>0.1</MeleeDamageFactor>    
         </statOffsets>
+        <capMods>
+        <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.07</offset>
+        </li>
+        </capMods>
         <modExtensions>
             <li Class="VEF.Genes.GeneExtension">
                 <hediffsToBodyParts>
@@ -33,7 +39,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_FelinidFelineAgility</defName>
         <label>feline agility</label>
-        <description>[Placeholder]</description>
+        <description>Carriers of this gene are quick on their feet and quicker to dodge, and doubly so when nothing covers their skin. REMINDER: Imperial regulations insist on a fully-clothed soldier at all times.</description>
         <iconPath>UI/Genes/Felinid/BEWH_FelineAgility</iconPath>
         <biostatCpx>2</biostatCpx>
         <biostatMet>-2</biostatMet>
@@ -57,7 +63,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_FelinidCatlikeMindset</defName>
         <label>catlike mindset</label>
-        <description>[Placeholder]</description>
+        <description>Carriers of this gene think like a cat, which mostly means occasional, uncontrollable urges to nuzzle a nearby colonist.</description>
         <iconPath>UI/Genes/Felinid/BEWH_CatlikeMindset</iconPath>
         <geneClass>Abhuman40k.Gene_CatlikeMindset</geneClass>
         <biostatCpx>5</biostatCpx>

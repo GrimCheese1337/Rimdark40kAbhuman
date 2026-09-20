@@ -41,7 +41,7 @@
     <BEWH.Abhuman.Navigator.WarpTravelOverCapacity>{0} can only hold {1} within their gaze. {2} left behind.</BEWH.Abhuman.Navigator.WarpTravelOverCapacity>
 
     <!-- Felinid -->
-    <BEWH.Abhuman.Felinid.Nuzzled>Cutie {0} nuzzled me, so soft! UwU</BEWH.Abhuman.Felinid.Nuzzled>
+    <BEWH.Abhuman.Felinid.Nuzzled>A cute felinid nuzzled me, so soft.</BEWH.Abhuman.Felinid.Nuzzled>
 
     <!-- Placement Limit -->
     <BEWH.Abhuman.PlacementLimit.RequiresBeastman>Can only be placed while a colonist with the 'Herdstone Affinity' gene is present on the map.</BEWH.Abhuman.PlacementLimit.RequiresBeastman>

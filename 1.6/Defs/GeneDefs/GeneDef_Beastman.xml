@@ -141,7 +141,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_BeastmanHooved</defName>
         <label>hooved</label>
-        <description>Carriers of this gene have hooves instead of feet, which allows them to move faster when their legs are uncovered. However, wearing pants slows them down.</description>
+        <description>Carriers of this gene have hooves instead of feet, which allows them to move faster, especially when their legs are uncovered. However, wearing pants slows them down.</description>
         <iconPath>UI/Genes/Beastmen/BEWH_Hooved</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>1</biostatMet>
