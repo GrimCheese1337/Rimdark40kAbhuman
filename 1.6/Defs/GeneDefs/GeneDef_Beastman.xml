@@ -5,7 +5,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_BeastmanGoatPhysique</defName>
         <label>beastman physique</label>
-        <description>Carriers of this gene have a mutation that gives them a distinctly goat-like appearance. They can consume raw food without issue and age more slowly after reaching 18 years of age.</description>
+        <description>Carriers of this gene have a mutation that gives them a distinctly goat-like body structure. They can consume raw food without issue and age more slowly after reaching 18 years of age.</description>
         <iconPath>UI/Genes/Beastmen/BEWH_GoatPhysique</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
@@ -71,6 +71,18 @@
                 </drawData>
             </li>
         </renderNodeProperties>
+        <modExtensions>
+        <li Class="VEF.Genes.GeneExtension">
+            <customMeatThingDef>Meat_Goat</customMeatThingDef>
+            <defsTreatedAsHumanMeat>
+                <li>Meat_Goat</li>
+            </defsTreatedAsHumanMeat>
+        </li>
+        </modExtensions>
+        <customEffectDescriptions>
+            <li>Yields goat meat when butchered</li>
+            <li>For this individual consuming goat meat is considered cannibalism</li>
+        </customEffectDescriptions>
     </GeneDef>
 
     <!-- Beastman: Horns (extracted from GoatPhysique) -->
@@ -168,7 +180,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_BeastmanInnateBloodlust</defName>
         <label>innate bloodlust</label>
-        <description>Carriers of this gene have a natural predisposition toward violence and an almost physical need for it, particularly at close range. They are more skilled with melee weapons, while ranged weapons are less suited to them.</description>
+        <description>Carriers of this gene have a natural predisposition toward violence and an almost physical need for it, particularly at close range. They are naturally skilled with melee weapons, while ranged weapons are less suited to them.</description>
         <iconPath>UI/Genes/Beastmen/BEWH_InnateBloodlust</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>-1</biostatMet>
@@ -336,6 +348,18 @@
         <exclusionTags>
             <li>Physique</li>
         </exclusionTags>
+        <modExtensions>
+        <li Class="VEF.Genes.GeneExtension">
+            <customMeatThingDef>Meat_Cow</customMeatThingDef>
+            <defsTreatedAsHumanMeat>
+                <li>Meat_Cow</li>
+            </defsTreatedAsHumanMeat>
+        </li>
+        </modExtensions>
+        <customEffectDescriptions>
+            <li>Yields beef when butchered</li>
+            <li>For this individual consuming beef is considered cannibalism</li>
+        </customEffectDescriptions>
     </GeneDef>
 
     <!-- Minotaur: Horns (Extracted from MinotaurPhysique) -->

@@ -5,7 +5,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_OgrynBrutePhysique</defName>
         <label>brute physique</label>
-        <description>[Placeholder]</description>
+        <description>Carriers of this gene have somewhat brutish features, enormous size, thick skin and increased muscle mass. These features enable them to carry heavier loads, withstand punches more effectively and be overall stronger than the average person.</description>
         <iconPath>UI/Genes/Ogryn/BEWH_BrutePhysique</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>-4</biostatMet>
@@ -81,7 +81,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_OgrynSlowWitted</defName>
         <label>slow witted</label>
-        <description>[Placeholder]</description>
+        <description>Carriers of this gene have difficulties even with the simplest tasks. They find it extremely hard to focus on work that requires even a relatively small amount of intellectual effort.</description>
         <iconPath>UI/Genes/Ogryn/BEWH_SlowWitted</iconPath>
         <geneClass>Core40k.Gene_DisabledBy</geneClass>
         <biostatCpx>2</biostatCpx>
@@ -118,7 +118,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_OgrynThickFlesh</defName>
         <label>thick flesh</label>
-        <description>[Placeholder]</description>
+        <description>Carriers of this gene have exceptionally thick muscle tissue and, overall, increased muscle mass.</description>
         <iconPath>UI/Genes/Ogryn/BEWH_ThickFlesh</iconPath>
         <biostatCpx>2</biostatCpx>
         <biostatMet>-3</biostatMet>
@@ -126,18 +126,22 @@
 
         <statFactors>
             <IncomingDamageFactor>0.85</IncomingDamageFactor>
+            <MeatAmount>1.25</MeatAmount>
         </statFactors>
         <statOffsets>
             <ArmorRating_Blunt>0.20</ArmorRating_Blunt>
             <ArmorRating_Sharp>0.05</ArmorRating_Sharp>
         </statOffsets>
+        <exclusionTags>
+            <li>MeatAmount</li>
+        </exclusionTags>
     </GeneDef>
 
     <!-- Ogryn: Toddler Logic -->
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_OgrynToddlerLogic</defName>
         <label>toddler logic</label>
-        <description>[Placeholder]</description>
+        <description>Carriers of this gene perceive the world around them with childlike simplicity and naivety. They are unable to participate effectively in negotiations and are easily manipulated. At the same time, they possess an innate kind nature and rarely initiate conflicts.</description>
         <iconPath>UI/Genes/Ogryn/BEWH_ToddlerLogic</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>2</biostatMet>
@@ -160,7 +164,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_OgrynBoneEad</defName>
         <label>bone 'ead</label>
-        <description>[Placeholder]</description>
+        <description>This character received a BONE implant. Their intellectual abilities have been enhanced, and they can now perform routine tasks.</description>
         <iconPath>UI/Genes/Ogryn/BEWH_BoneEad</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>3</biostatMet>
