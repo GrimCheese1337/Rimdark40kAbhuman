@@ -5,7 +5,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_RatlingNimblePhysique</defName>
         <label>nimble physique</label>
-        <description>[Placeholder]</description>
+        <description>Carriers of this gene are short in stature and have a compact build. Their size makes them harder to spot and more difficult to hit in close combat. They are also generaly more agile than the average person. However, all this makes them more vulnerable if they are hit.</description>
         <iconPath>UI/Genes/Ratling/BEWH_NimblePhysique</iconPath>
         <biostatCpx>3</biostatCpx>
         <biostatMet>-1</biostatMet>
@@ -50,7 +50,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_RatlingCulinaryInstinct</defName>
         <label>culinary instinct</label>
-        <description>[Placeholder]</description>
+        <description>Carriers of this gene are natural-born cooks. They love to cook, and, even more so, they love to eat. That's the reason they cook rapidly, and devour their cooking just as rapidly. At the same time, their amazing sense of smell helps them spot poor quality and bad ingredients.</description>
         <iconPath>UI/Genes/Ratling/BEWH_CulinaryInstincts</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>-1</biostatMet>
@@ -59,6 +59,7 @@
         <statOffsets>
             <CookSpeed>0.15</CookSpeed>
             <FoodPoisonChance>-0.75</FoodPoisonChance>
+            <EatingSpeed>0.67</EatingSpeed>
         </statOffsets>
         <aptitudes>
             <Cooking>3</Cooking>
@@ -69,7 +70,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_RatlingIndolentDisposition</defName>
         <label>indolent disposition</label>
-        <description>[Placeholder]</description>
+        <description>Carriers of this gene are physiologically predisposed to laziness. They love to lounge around and sleep all day (just like you), and won't pass on the opportunity to do so. It's hard to get them to work, and they tire more quickly. Still, there is a positive aspect to this - their mental break threshold is lower than that of the average person.</description>
         <iconPath>UI/Genes/Ratling/BEWH_IndolentDisposition</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>1</biostatMet>
@@ -91,7 +92,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_RatlingGregarious</defName>
         <label>gregarious</label>
-        <description>[Placeholder]</description>
+        <description>Carriers of this gene are naturally talkative. They love all kinds of get-togethers and socializing. The more people around them, the happier they are - and vice versa.</description>
         <iconPath>UI/Genes/Ratling/BEWH_Gregarious</iconPath>
         <biostatCpx>2</biostatCpx>
         <biostatMet>-2</biostatMet>
@@ -101,7 +102,7 @@
             <Social>2</Social>
         </aptitudes>
         <customEffectDescriptions>
-            <li>Doubled mood buff from parties, weddings and concerts</li>
+            <li>Double mood buff from parties, weddings and concerts</li>
             <li>Mood bonus or penalty depending on amount of pawns in colony</li>
         </customEffectDescriptions>
         <modExtensions>
@@ -119,7 +120,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_RatlingKeenEyed</defName>
         <label>keen eyed</label>
-        <description>[Placeholder]</description>
+        <description>Carriers of this gene are natural-born snipers. They are highly skilled with long-range weapons, and their keen eyesight allows them to hit targets that an ordinary person wouldn't even attempt.</description>
         <iconPath>UI/Genes/Ratling/BEWH_Keen-eyed</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>-1</biostatMet>
@@ -146,7 +147,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_RatlingScavengerInstinct</defName>
         <label>scavenger instinct</label>
-        <description>[Placeholder]</description>
+        <description>Carriers of this gene love to pocket whatever they can get their hands on, and do it remarkably well. They exploit any resources to the fullest, regardless of their origin. Steal a person's wristwatch while shaking their hand, strip a carcass down to the bare bones or take a mechanoid apart screw by screw - it's all the same to them.</description>
         <iconPath>UI/Genes/Ratling/BEWH_ScavengerInstinct</iconPath>
         <biostatCpx>2</biostatCpx>
         <biostatMet>-1</biostatMet>
@@ -160,7 +161,7 @@
             <ButcheryMechanoidEfficiency>0.20</ButcheryMechanoidEfficiency>
         </statOffsets>
         <customEffectDescriptions>
-            <li>Immune to tainted apparel</li>
+            <li>Don't mind tainted apparel</li>
         </customEffectDescriptions>
     </GeneDef>
 
@@ -168,7 +169,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_RatlingFecund</defName>
         <label>fecund</label>
-        <description>[Placeholder]</description>
+        <description>Carriers of this gene are extremely fertile and, at the same time, highly amorous. Given enough time and privacy, they will find a way to make more carriers of this gene.</description>
         <iconPath>UI/Genes/Ratling/BEWH_Fecund</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>-1</biostatMet>

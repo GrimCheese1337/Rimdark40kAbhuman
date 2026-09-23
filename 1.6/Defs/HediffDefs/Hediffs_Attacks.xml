@@ -30,7 +30,7 @@
     <HediffDef>
         <defName>BEWH_FelinidClawAttack</defName>
         <label>felinid claws</label>
-        <description>[Placeholder]</description>
+        <description>Retractable, sharp claws that can be used in close combat.</description>
         <hediffClass>HediffWithComps</hediffClass>
         <scenarioCanAdd>false</scenarioCanAdd>
         <maxSeverity>1.0</maxSeverity>

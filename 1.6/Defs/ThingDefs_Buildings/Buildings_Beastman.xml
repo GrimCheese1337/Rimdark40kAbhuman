@@ -5,7 +5,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>BEWH_HerdstoneRaid</defName>
     <label>herdstone</label>
-    <description>[Placeholder]</description>
+    <description>No one knows how this pile of junk stays together at all, but whenever anyone tries to destroy it, it proves to be incredibly durable. And worst of all, it causes fleeting rifts in the Warp, allowing malevolent horned creatures to invade this world.</description>
     <thingClass>Abhuman40k.Building_HerdstoneEnemy</thingClass>
     <rotatable>false</rotatable>
     <altitudeLayer>BuildingOnTop</altitudeLayer>
@@ -54,7 +54,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>BEWH_HerdstonePlayer</defName>
     <label>herdstone</label>
-    <description>[Placeholder]</description>
+    <description>The Beastmen's Sacred Menhir. These monuments are the centerpiece of any Beastmen settlement. No one fully understands how they work, but their presence strengthens the Beastmen, binding the herd together and enhancing their primal power. When Beastmen are in close proximity to the Herdstone, they become stronger than ever before.</description>
     <thingClass>Abhuman40k.Building_Herdstone</thingClass>
     <rotatable>false</rotatable>
     <altitudeLayer>BuildingOnTop</altitudeLayer>
@@ -127,8 +127,8 @@
   <!-- Can build 1 at 2 pawns with herdstone affinity to a max of 9 at 20 pawns with herstone affinity, follows some curve i made -->
   <ThingDef ParentName="BuildingBase">
     <defName>BEWH_HerdstoneConduitPlayer</defName>
-    <label>herdstone conduit</label>
-    <description>[Placeholder]</description>
+    <label>herdstone marker</label>
+    <description>Small stone markers etched with ancient runes, these serve as conduits for the Herdstone's power. Each of these markers extends the reach of the Herdstone, spreading its influence across a wider area. However, the Herdstone's power is finite and remains unchanged, so the more markers are raised, the more thinly its strength is spread. A greater number of markers provides broader coverage, but weaker protection in any given place.\n\nThe number of Herdstone Markers you can build depends on how many colonists with the 'Herdstone Affinity' gene are present.</description>
     <thingClass>Abhuman40k.Building_HerdstoneConduit</thingClass>
     <containedPawnsSelectable>true</containedPawnsSelectable>
     <altitudeLayer>Building</altitudeLayer>

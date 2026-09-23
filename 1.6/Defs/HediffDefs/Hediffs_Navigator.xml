@@ -3,8 +3,8 @@
 
     <HediffDef>
         <defName>BEWH_NavigtorHouseBelisariusBuff</defName>
-        <label>Wolfblade</label>
-        <description>[Placeholder]</description>
+        <label>House Guard</label>
+        <description>This pawn is bound by duty to protect the Navigator, serving as their personal House Guard. The guard moves faster and fights more effectively while being less susceptible to damage.</description>
         <hediffClass>HediffWithComps</hediffClass>
         <scenarioCanAdd>false</scenarioCanAdd>
         <isBad>false</isBad>

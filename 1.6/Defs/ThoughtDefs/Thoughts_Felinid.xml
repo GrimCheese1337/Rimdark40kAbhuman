@@ -23,7 +23,7 @@
       </li>
       <li>
         <label>nuzzled someone</label>
-        <description>I nuzzled someone, it was nice and relaxing</description>
+        <description>I nuzzled someone. Mrow~</description>
         <baseMoodEffect>6</baseMoodEffect>
       </li>
     </stages>
@@ -36,7 +36,7 @@
     <validWhileDespawned>true</validWhileDespawned>
     <stages>
       <li>
-        <label>Cute UwU</label>
+        <label>Cute UwU</label> <!-- Are we leaving this in prod? (ó﹏ò｡) -->
         <baseOpinionOffset>15</baseOpinionOffset>
       </li>
     </stages>

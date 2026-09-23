@@ -4,8 +4,8 @@
     <BEWH.Abhuman.ModSettings.ModName>RimDark 40k - Abhumans - {0}</BEWH.Abhuman.ModSettings.ModName>
 
     <!-- Beastman -->
-    <BEWH.Abhuman.Beastman.HerdstonePresent>Herdstone on map</BEWH.Abhuman.Beastman.HerdstonePresent>
-    <BEWH.Abhuman.Beastman.GestateMinotaur>Gestate Minotaur</BEWH.Abhuman.Beastman.GestateMinotaur>
+    <BEWH.Abhuman.Beastman.HerdstonePresent>A Herdstone is present on the map.</BEWH.Abhuman.Beastman.HerdstonePresent>
+    <BEWH.Abhuman.Beastman.GestateMinotaur>Create Minotaur</BEWH.Abhuman.Beastman.GestateMinotaur>
 
     <BEWH.Abhuman.Beastman.HerdstoneInUse>{0} is currently conducting a ritual here.</BEWH.Abhuman.Beastman.HerdstoneInUse>
     <BEWH.Abhuman.Beastman.HerdstoneNotStarted>Ritual not started.</BEWH.Abhuman.Beastman.HerdstoneNotStarted>
@@ -41,12 +41,12 @@
     <BEWH.Abhuman.Navigator.WarpTravelOverCapacity>{0} can only hold {1} within their gaze. {2} left behind.</BEWH.Abhuman.Navigator.WarpTravelOverCapacity>
 
     <!-- Felinid -->
-    <BEWH.Abhuman.Felinid.Nuzzled>Cutie {0} nuzzled me, so soft! UwU</BEWH.Abhuman.Felinid.Nuzzled>
+    <BEWH.Abhuman.Felinid.Nuzzled>A cute felinid nuzzled me, so soft.</BEWH.Abhuman.Felinid.Nuzzled>
 
     <!-- Placement Limit -->
-    <BEWH.Abhuman.PlacementLimit.RequiresBeastman>Requires a colonist with the 'Herdstone Affinity' gene on the map to place.</BEWH.Abhuman.PlacementLimit.RequiresBeastman>
-    <BEWH.Abhuman.PlacementLimit.RequiresHerdstone>Requires a player built herdstone on the map.</BEWH.Abhuman.PlacementLimit.RequiresHerdstone>
-    <BEWH.Abhuman.PlacementLimit.HerdstoneConduitLimit>Can only place {0} conduits on map, currently {1} exists.</BEWH.Abhuman.PlacementLimit.HerdstoneConduitLimit>
+    <BEWH.Abhuman.PlacementLimit.RequiresBeastman>Can only be placed while a colonist with the 'Herdstone Affinity' gene is present on the map.</BEWH.Abhuman.PlacementLimit.RequiresBeastman>
+    <BEWH.Abhuman.PlacementLimit.RequiresHerdstone>Requires a player-built Herdstone to be present on the map.</BEWH.Abhuman.PlacementLimit.RequiresHerdstone>
+    <BEWH.Abhuman.PlacementLimit.HerdstoneConduitLimit>Marker limit reached: {1}/{0}. More colonists with the 'Herdstone Affinity' gene are required to place additional markers.</BEWH.Abhuman.PlacementLimit.HerdstoneConduitLimit>
 
     <!-- Conditionals -->
     <BEWH.Abhuman.Conditional.StatsReport_FeetCovered>feet covered</BEWH.Abhuman.Conditional.StatsReport_FeetCovered>
