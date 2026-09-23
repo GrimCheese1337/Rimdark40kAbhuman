@@ -4,7 +4,7 @@
     <XenotypeDef>
         <defName>BEWH_Felinid</defName>
         <label>felinid</label>
-        <description>[Placeholder]</description>
+        <description>The abhuman species was created artificially by crossbreeding the DNA of an Terran cat and a human for reasons that are unknown. Little is known about this species. Some say they are excellent fighters, while others note their weird behavior.</description>
         <iconPath>UI/Xenotypes/BEWH_Felinid_icon</iconPath>
         <inheritable>true</inheritable>
         <canGenerateAsCombatant>true</canGenerateAsCombatant>

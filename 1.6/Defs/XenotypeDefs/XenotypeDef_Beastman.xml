@@ -4,7 +4,7 @@
     <XenotypeDef Name="BEWH_BeastmanXenotype">
         <defName>BEWH_Beastman</defName>
         <label>beastman</label>
-        <description>[Placeholder]Beastmen (Homo sapiens variatus) are bestial abhumans combining the forms of animal and human. They are valued mainly for their bloodlust.</description>
+        <description>Beastmen (Homo sapiens variatus) are a type of abhuman with bestial mutations that combine human and animal features. They are mainly valued for their bloodlust. While many consider them to be subhuman, these warriors have often proven themselves to be the equal of ordinary humans in terms of intelligence and loyalty.</description>
         <iconPath>UI/Xenotypes/BEWH_Beastman_icon</iconPath>
         <inheritable>true</inheritable>
         <canGenerateAsCombatant>false</canGenerateAsCombatant>
@@ -34,7 +34,7 @@
     <XenotypeDef ParentName="BEWH_BeastmanXenotype">
         <defName>BEWH_Minotaur</defName>
         <label>minotaur</label>
-        <description>[Placeholder]</description>
+        <description>An unusually large and aggressive strain of giant Beastmen. They are bigger, stronger and more feral. These creatures are closer to the beast than to the human. Their imposing size and wild appearance strike fear into the hearts of those who are unfamiliar with them.</description>
         <iconPath>UI/Xenotypes/BEWH_Minotaur_icon</iconPath>
         <factionlessGenerationWeight>0.05</factionlessGenerationWeight>
         <genes Inherit="False">
