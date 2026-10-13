@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Navigator critical reactor -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>BEWH_NavigatorCriticalReactor</defName>
+    <label>grav-engine (critical)</label>
+    <description>The wounded heart of a gravship. Its containment field is holding, for now, on nothing but inertia and the Omnissiah's indulgence. Disturb it and it will not hold for long.</description>
+    <thingClass>Abhuman40k.Building_CriticalReactor</thingClass>
+
+    <graphicData>
+      <texPath>Things/Building/BEWH_NavigatorGravcore_On</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3, 3)</drawSize>
+      <shadowData>
+        <volume>(2.6, 0.6, 2.6)</volume>
+      </shadowData>
+    </graphicData>
+    <size>(3,3)</size>
+
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+
+    <statBases>
+      <MaxHitPoints>400</MaxHitPoints>
+      <Mass>60</Mass>
+      <Flammability>2.0</Flammability>
+      <Beauty>7.5</Beauty>
+    </statBases>
+
+    <pathCost>42</pathCost>
+    <rotatable>false</rotatable>
+    <passability>PassThroughOnly</passability>
+
+    <building>
+      <destroySound>MortarBomb_Explode</destroySound>
+      <claimable>false</claimable>
+    </building>
+    <tickerType>Normal</tickerType>
+    <filthLeaving>Filth_Fuel</filthLeaving>
+
+    <comps>
+      <li Class="Abhuman40k.CompProperties_CriticalReactor">
+        <ticksToExplode>10000</ticksToExplode>
+
+        <unstableGraphicData>
+          <texPath>Things/Building/BEWH_NavigatorGravcore_Unstable</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+          <drawSize>(3, 3)</drawSize>
+        </unstableGraphicData>
+
+        <glowStops>
+          <li>
+            <progress>0.0</progress>
+            <color>(60,255,90,0)</color>
+          </li>
+          <li>
+            <progress>0.6</progress>
+            <color>(255,150,40,0)</color>
+          </li>
+          <li>
+            <progress>1.0</progress>
+            <color>(255,40,30,0)</color>
+          </li>
+        </glowStops>
+        <glowUpdateInterval>60</glowUpdateInterval>
+
+        <explosionRadius>30</explosionRadius>
+        <damageDef>BombSuper</damageDef>
+        <damageAmount>1500</damageAmount>
+        <chanceToStartFire>0.35</chanceToStartFire>
+        <craterDef>CraterLarge</craterDef>
+        <detonationLetter>BEWH_ReactorDetonation</detonationLetter>
+        <screenShakeFactor>4</screenShakeFactor>
+
+        <toughnessThreshold>2.0</toughnessThreshold>
+        <survivorHitPointsFactor>0.15</survivorHitPointsFactor>
+      </li>
+
+      <li Class="CompProperties_Glower">
+        <glowRadius>12</glowRadius>
+        <glowColor>(60,255,90,0)</glowColor>
+      </li>
+
+      <li Class="CompProperties_SpawnerFilth">
+        <filthDef>Filth_Fuel</filthDef>
+        <spawnRadius>2</spawnRadius>
+        <spawnMtbHours>0.5</spawnMtbHours>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

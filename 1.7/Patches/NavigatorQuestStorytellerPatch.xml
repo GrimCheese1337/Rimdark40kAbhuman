@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/StorytellerDef[@Name="BaseStoryteller"]/comps</xpath>
+        <value>
+            <li Class="Core40k.StorytellerCompProperties_PersistentQuest">
+                <incident>BEWH_NavigatorDowned</incident>
+                <minDaysPassed>50</minDaysPassed>
+                <retryDelayDaysRange>25~40</retryDelayDaysRange>
+                <completionMode>Manual</completionMode>
+                <maxOccurrences>-1</maxOccurrences>
+                <skipIfOnExtremeBiome>true</skipIfOnExtremeBiome>
+                <allowedTargetTags>
+                    <li>World</li>
+                </allowedTargetTags>
+            </li>
+        </value>
+    </Operation>
+
+</Patch>

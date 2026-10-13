@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- Beastman: Goat Physique -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_BeastmanGoatPhysique</defName>
+        <label>beastman physique</label>
+        <description>Carriers of this gene have a mutation that gives them a distinctly goat-like body structure. They can consume raw food without issue and age more slowly after reaching 18 years of age.</description>
+        <iconPath>UI/Genes/Beastmen/BEWH_GoatPhysique</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>81</displayOrderInCategory>
+
+        <missingGeneRomanceChanceFactor>0.2</missingGeneRomanceChanceFactor>
+        <dontMindRawFood>true</dontMindRawFood>
+
+        <biologicalAgeTickFactorFromAgeCurve>
+            <points>
+                <li>(18, 0.6)</li>
+            </points>
+        </biologicalAgeTickFactorFromAgeCurve>
+
+        <forcedHeadTypes>
+            <li>BEWH_BeastmanHeadM</li>
+            <li>BEWH_BeastmanHeadF</li>
+        </forcedHeadTypes>
+        <beardTagFilter>
+            <whitelist>true</whitelist>
+            <tags>
+                <li>Beastman</li>
+            </tags>
+        </beardTagFilter>
+        <exclusionTags>
+            <li>Fur</li>
+            <li>BeardStyle</li>
+            <li>Physique</li>
+            <li>Ears</li>
+        </exclusionTags>
+        <statOffsets>
+            <ComfyTemperatureMin>-15</ComfyTemperatureMin>
+            <VEF_BodySize_Offset>0.1</VEF_BodySize_Offset>
+        </statOffsets>
+        <fur>Furskin</fur>
+        <skinIsHairColor>false</skinIsHairColor>
+        <tattoosVisible>false</tattoosVisible>
+        <renderNodeProperties>
+            <li>
+                <debugLabel>Fur</debugLabel>
+                <nodeClass>PawnRenderNode_Fur</nodeClass>
+                <workerClass>PawnRenderNodeWorker_Fur</workerClass>
+                <baseLayer>5</baseLayer>
+                <rotDrawMode>Fresh, Rotting</rotDrawMode>
+                <colorType>Hair</colorType>
+                <parentTagDef>Body</parentTagDef>
+            </li>
+            <li>
+                <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+                <workerClass>Core40k.PawnRenderNodeWorker_HeadCovered</workerClass>
+                <texPaths>
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Ears/BEWH_BeastmanEars1</li>
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Ears/BEWH_BeastmanEars2</li>
+                </texPaths>
+                <colorType>Skin</colorType>
+                <parentTagDef>Head</parentTagDef>
+                <useSkinShader>true</useSkinShader>
+                <useRottenColor>true</useRottenColor>
+                <rotDrawMode>Fresh, Rotting</rotDrawMode>
+                <drawData>
+                    <defaultData>
+                        <layer>70</layer>
+                    </defaultData>
+                </drawData>
+            </li>
+        </renderNodeProperties>
+        <modExtensions>
+        <li Class="VEF.Genes.GeneExtension">
+            <customMeatThingDef>Meat_Goat</customMeatThingDef>
+            <defsTreatedAsHumanMeat>
+                <li>Meat_Goat</li>
+            </defsTreatedAsHumanMeat>
+        </li>
+        </modExtensions>
+        <customEffectDescriptions>
+            <li>Yields goat meat when butchered</li>
+            <li>For this individual consuming goat meat is considered cannibalism</li>
+        </customEffectDescriptions>
+    </GeneDef>
+
+    <!-- Beastman: Horns (extracted from GoatPhysique) -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_BeastmanHorns</defName>
+        <label>beastmen horns</label>
+        <description>Carriers of this gene have horns on their heads that resemble those of a goat.</description>
+        <iconPath>UI/Genes/Beastmen/BEWH_BeastmenHorns</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>83</displayOrderInCategory>
+
+        <exclusionTags>
+            <li>Horn</li>
+            <li>Horns</li>
+        </exclusionTags>
+        <renderNodeProperties>
+            <li>
+                <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+                <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+                <texPaths>
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Horns/Male/BEWH_Male_BeastmanHorns1</li>
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Horns/Male/BEWH_Male_BeastmanHorns2</li>
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Horns/Male/BEWH_Male_BeastmanHorns3</li>
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Horns/Male/BEWH_Male_BeastmanHorns4</li>
+                </texPaths>
+                <texPathsFemale>
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Horns/Female/BEWH_Female_BeastmanHorns1</li>
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Horns/Female/BEWH_Female_BeastmanHorns2</li>
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Horns/Female/BEWH_Female_BeastmanHorns3</li>
+                </texPathsFemale>
+                <color>
+                    <r>0.5</r>
+                    <g>0.5</g>
+                    <b>0.5</b>
+                    <a>1</a>
+                </color>
+                <parentTagDef>Head</parentTagDef>
+                <drawData>
+                    <defaultData>
+                        <layer>75</layer>
+                    </defaultData>
+                    <dataNorth>
+                        <layer>10</layer>
+                        <offset>(0, -0.1, 0)</offset>
+                    </dataNorth>
+                </drawData>
+            </li>
+        </renderNodeProperties>
+        <customEffectDescriptions>
+            <li>Gives a horn attack</li>
+        </customEffectDescriptions>
+        <modExtensions>
+            <li Class="VEF.Genes.GeneExtension">
+                <hediffsToBodyParts>
+                    <li>
+                        <hediff>BEWH_BeastmanHornAttack</hediff>
+                        <bodyparts>
+                            <li>Head</li>
+                        </bodyparts>
+                    </li>
+                </hediffsToBodyParts>
+            </li>
+        </modExtensions>
+    </GeneDef>
+
+    <!-- Beastman: Hooved -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_BeastmanHooved</defName>
+        <label>hooved</label>
+        <description>Carriers of this gene have hooves instead of feet, which allows them to move faster, especially when their legs are uncovered. However, wearing pants slows them down.</description>
+        <iconPath>UI/Genes/Beastmen/BEWH_Hooved</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>1</biostatMet>
+        <displayOrderInCategory>82</displayOrderInCategory>
+
+        <statOffsets>
+            <MoveSpeed>0.3</MoveSpeed>
+        </statOffsets>
+        <conditionalStatAffecters>
+            <li Class="Abhuman40k.ConditionalStatAffecter_FeetUncovered">
+                <statOffsets>
+                    <MoveSpeed>0.5</MoveSpeed>
+                </statOffsets>
+            </li>
+            <li Class="Abhuman40k.ConditionalStatAffecter_FeetCovered">
+                <statOffsets>
+                    <MoveSpeed>-0.5</MoveSpeed>
+                </statOffsets>
+            </li>
+        </conditionalStatAffecters>
+    </GeneDef>
+
+    <!-- Beastman: Innate Bloodlust -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_BeastmanInnateBloodlust</defName>
+        <label>innate bloodlust</label>
+        <description>Carriers of this gene have a natural predisposition toward violence and an almost physical need for it, particularly at close range. They are naturally skilled with melee weapons, while ranged weapons are less suited to them.</description>
+        <iconPath>UI/Genes/Beastmen/BEWH_InnateBloodlust</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>-1</biostatMet>
+        <displayOrderInCategory>84</displayOrderInCategory>
+
+        <aggroMentalBreakSelectionChanceFactor>2</aggroMentalBreakSelectionChanceFactor>
+        <enablesNeeds>
+            <li>KillThirst</li>
+        </enablesNeeds>
+        <statOffsets>
+            <MeleeDamageFactor>0.15</MeleeDamageFactor>
+        </statOffsets>
+        <aptitudes>
+            <Melee>4</Melee>
+            <Shooting>-2</Shooting>
+        </aptitudes>
+        <suppressedTraits>
+            <li>
+                <def>Wimp</def>
+            </li>
+            <li>
+                <def>Kind</def>
+            </li>
+        </suppressedTraits>
+        <exclusionTags>
+            <li>KillThirst</li>
+        </exclusionTags>
+    </GeneDef>
+
+    <!-- Beastman: Rowdy -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_BeastmanRowdy</defName>
+        <label>rowdy</label>
+        <description>Carriers of this gene are naturally rowdy and quick to pick a fight. They are more likely to get into social fights and are considerably more prone to attempting prison breaks.</description>
+        <iconPath>UI/Genes/Beastmen/BEWH_Rowdy</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>-1</biostatMet>
+        <displayOrderInCategory>85</displayOrderInCategory>
+
+        <socialFightChanceFactor>1.6</socialFightChanceFactor>
+        <prisonBreakMTBFactor>0.4</prisonBreakMTBFactor>
+    </GeneDef>
+
+    <!-- Minotaur: Herdstone Affinity -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_BeastmanHerdstoneAffinity</defName>
+        <label>herdstone affinity</label>
+        <description>Carriers of this gene possess a deep affinity for the Herdstone, drawing strength and vitality from its presence. As long as a Herdstone is present in the colony, they become faster, more resilient, and more capable in combat, while their minds remain unusually receptive to learning. When within the Herdstone's aura, they gain an additional surge of strength and vitality.</description>
+        <iconPath>UI/Genes/Beastmen/BEWH_HerdstoneAffinity</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>1</biostatMet>
+        <displayOrderInCategory>86</displayOrderInCategory>
+
+        <conditionalStatAffecters>
+            <li Class="Abhuman40k.ConditionalStatAffecter_HerdstonePresent">
+                <statOffsets>
+                    <MoveSpeed>0.1</MoveSpeed>
+                    <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+                    <ArmorRating_Sharp>0.05</ArmorRating_Sharp>
+                    <ArmorRating_Heat>0.05</ArmorRating_Heat>
+                    <MeleeDamageFactor>0.1</MeleeDamageFactor>
+
+                    <GlobalLearningFactor>0.05</GlobalLearningFactor>
+                </statOffsets>
+            </li>
+        </conditionalStatAffecters>
+    </GeneDef>
+
+    <!-- Minotaur: Minotaur Physique -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_MinotaurPhysique</defName>
+        <label>minotaur physique</label>
+        <description>Carriers of this gene have a mutation that gives them a distinctly wild, bull-like appearance. They can consume raw food without issue and age more slowly after reaching 18 years of age.</description>
+        <iconPath>UI/Genes/Beastmen/BEWH_MinotaurPhysique</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>81</displayOrderInCategory>
+
+        <biologicalAgeTickFactorFromAgeCurve>
+            <points>
+                <li>(18, 0.6)</li>
+            </points>
+        </biologicalAgeTickFactorFromAgeCurve>
+
+        <missingGeneRomanceChanceFactor>0.2</missingGeneRomanceChanceFactor>
+        <dontMindRawFood>true</dontMindRawFood>
+        <forcedHeadTypes>
+            <li>BEWH_MinotaurHead1</li>
+            <li>BEWH_MinotaurHead1</li>
+            <li>BEWH_MinotaurHead1</li>
+            <li>BEWH_MinotaurHead2</li>
+            <li>BEWH_MinotaurHead3</li>
+        </forcedHeadTypes>
+        <beardTagFilter>
+            <whitelist>true</whitelist>
+            <tags>
+                <li>BeardLong</li>
+                <li>Furskin</li>
+            </tags>
+        </beardTagFilter>
+        <exclusionTags>
+            <li>HairStyle</li>
+            <li>Fur</li>
+            <li>BeardStyle</li>
+            <li>Ears</li>
+        </exclusionTags>
+        <statOffsets>
+            <ComfyTemperatureMin>-15</ComfyTemperatureMin>
+        </statOffsets>
+        <fur>Furskin</fur>
+        <skinIsHairColor>false</skinIsHairColor>
+        <tattoosVisible>false</tattoosVisible>
+        <renderNodeProperties>
+            <li>
+                <debugLabel>Fur</debugLabel>
+                <nodeClass>Abhuman40k.PawnRenderNode_FurSkin</nodeClass>
+                <workerClass>PawnRenderNodeWorker_Fur</workerClass>
+                <baseLayer>5</baseLayer>
+                <rotDrawMode>Fresh, Rotting</rotDrawMode>
+                <colorType>Skin</colorType>
+                <parentTagDef>Body</parentTagDef>
+            </li>
+            <li>
+                <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+                <workerClass>Core40k.PawnRenderNodeWorker_HeadCovered</workerClass>
+                <texPaths>
+                    <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/Ears/BEWH_MinotaurEars1</li>
+                    <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/Ears/BEWH_MinotaurEars2</li>
+                    <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/Ears/BEWH_MinotaurEars3</li>
+                </texPaths>
+                <colorType>Skin</colorType>
+                <parentTagDef>Head</parentTagDef>
+                <useSkinShader>true</useSkinShader>
+                <useRottenColor>true</useRottenColor>
+                <rotDrawMode>Fresh, Rotting</rotDrawMode>
+                <drawData>
+                    <defaultData>
+                        <layer>70</layer>
+                    </defaultData>
+                </drawData>
+            </li>
+            <li>
+                <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+                <workerClass>Core40k.PawnRenderNodeWorker_HeadCovered</workerClass>
+                <texPaths>
+                    <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/HeadDecorations/BEWH_MinotaurDecoEmpty</li>
+                    <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/HeadDecorations/BEWH_MinotaurDecoEmpty</li>
+                    <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/HeadDecorations/BEWH_MinotaurDecoEmpty</li>
+                    <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/HeadDecorations/BEWH_MinotaurDeco1</li>
+                    <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/HeadDecorations/BEWH_MinotaurDeco3</li>
+                </texPaths>
+                <parentTagDef>Head</parentTagDef>
+                <drawData>
+                    <scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+                    <defaultData>
+                        <layer>80</layer>
+                    </defaultData>
+                </drawData>
+            </li>
+        </renderNodeProperties>
+        <modExtensions>
+            <li Class="VEF.Genes.GeneExtension">
+                <forceMale>true</forceMale>
+            </li>
+        </modExtensions>
+        <exclusionTags>
+            <li>Physique</li>
+        </exclusionTags>
+        <modExtensions>
+        <li Class="VEF.Genes.GeneExtension">
+            <customMeatThingDef>Meat_Cow</customMeatThingDef>
+            <defsTreatedAsHumanMeat>
+                <li>Meat_Cow</li>
+            </defsTreatedAsHumanMeat>
+        </li>
+        </modExtensions>
+        <customEffectDescriptions>
+            <li>Yields beef when butchered</li>
+            <li>For this individual consuming beef is considered cannibalism</li>
+        </customEffectDescriptions>
+    </GeneDef>
+
+    <!-- Minotaur: Horns (Extracted from MinotaurPhysique) -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_MinotaurHorns</defName>
+        <label>minotaur horns</label>
+        <description>Carriers of this gene grow four fearsome, bull-like horns, granting them the ability to gore their foes.</description>
+        <iconPath>UI/Genes/Beastmen/BEWH_MinotaurHorns</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>89</displayOrderInCategory>
+
+        <exclusionTags>
+            <li>Horn</li>
+            <li>Horns</li>
+        </exclusionTags>
+        <renderNodeProperties>
+            <li>
+                <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+                <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+                <texPaths>
+                    <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/Horns/BEWH_MinotaurHorns1</li>
+                    <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/Horns/BEWH_MinotaurHorns2</li>
+                    <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/Horns/BEWH_MinotaurHorns3</li>
+                    <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/Horns/BEWH_MinotaurHorns4</li>
+                </texPaths>
+                <color>(135,135,135)</color>
+                <parentTagDef>Head</parentTagDef>
+                <drawData>
+                    <defaultData>
+                        <layer>78</layer>
+                    </defaultData>
+                    <dataNorth>
+                        <layer>10</layer>
+                        <offset>(0, -0.1, 0)</offset>
+                    </dataNorth>
+                </drawData>
+            </li>
+        </renderNodeProperties>
+        <customEffectDescriptions>
+            <li>Gives a horn attack</li>
+        </customEffectDescriptions>
+        <modExtensions>
+            <li Class="VEF.Genes.GeneExtension">
+                <forceMale>true</forceMale>
+                <hediffsToBodyParts>
+                    <li>
+                        <hediff>BEWH_BeastmanHornAttack</hediff>
+                        <bodyparts>
+                            <li>Head</li>
+                        </bodyparts>
+                    </li>
+                </hediffsToBodyParts>
+            </li>
+        </modExtensions>
+    </GeneDef>
+
+    <!-- Minotaur: Herdstone Born -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_MinotaurHerdstoneBorn</defName>
+        <label>herdstone born</label>
+        <description>Carriers of this gene are born of the Herdstone, their bodies shaped by its influence. They are incapable of reproduction, but gain greater speed, resilience, and physical strength while a Herdstone is present in the colony.</description>
+        <iconPath>UI/Genes/Beastmen/BEWH_HerdstoneBorn</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>87</displayOrderInCategory>
+        <missingGeneRomanceChanceFactor>0</missingGeneRomanceChanceFactor>
+
+        <statFactors>
+            <Fertility>0</Fertility>
+        </statFactors>
+        <conditionalStatAffecters>
+            <li Class="Abhuman40k.ConditionalStatAffecter_HerdstonePresent">
+                <statOffsets>
+                    <MoveSpeed>0.05</MoveSpeed>
+                    <ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+                    <ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+                    <ArmorRating_Heat>0.1</ArmorRating_Heat>
+                    <MeleeDamageFactor>0.05</MeleeDamageFactor>
+                </statOffsets>
+            </li>
+        </conditionalStatAffecters>
+    </GeneDef>
+
+    <!-- Minotaur: Adrenal Surge Node -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_MinotaurAdrenalSurgeNode</defName>
+        <label>adrenal surge gland</label>
+        <description>This gland is found in Minotaurs, amplifying their primal aggression and triggering powerful surges of strength. It gives them a larger, more imposing physique, exceptional physical strength, and increased resistance to injury, but also makes them far more prone to violence and aggression.</description>
+        <iconPath>UI/Genes/Beastmen/BEWH_AdrenalSurgeGland</iconPath>
+        <biostatCpx>2</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <canGenerateInGeneSet>false</canGenerateInGeneSet>
+        <displayOrderInCategory>88</displayOrderInCategory>
+
+        <socialFightChanceFactor>2</socialFightChanceFactor>
+        <prisonBreakMTBFactor>0.5</prisonBreakMTBFactor>
+        <aggroMentalBreakSelectionChanceFactor>2</aggroMentalBreakSelectionChanceFactor>
+        <statOffsets>
+            <MeleeDamageFactor>0.2</MeleeDamageFactor>
+            <VEF_BodySize_Offset>0.3</VEF_BodySize_Offset>
+            <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.15</ArmorRating_Sharp>
+            <ArmorRating_Heat>0.20</ArmorRating_Heat>
+            <CarryingCapacity>80</CarryingCapacity>
+        </statOffsets>
+        <bodyType>Hulk</bodyType>
+        <modExtensions>
+            <li Class="Core40k.DefModExtension_GeneExtension">
+                <addedWorldCarryCapacity>80</addedWorldCarryCapacity>
+            </li>
+            <li Class="VEF.Genes.GeneExtension">
+                <forceMale>true</forceMale>
+            </li>
+        </modExtensions>
+    </GeneDef>
+
+</Defs>

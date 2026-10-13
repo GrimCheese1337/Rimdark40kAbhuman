@@ -1,0 +1,97 @@
+﻿using RimWorld;
+using Verse;
+using Verse.AI;
+
+
+namespace Abhuman40k;
+
+[DefOf]
+public static class Abhuman40kDefOf
+{
+    //BodypartGroupDef
+    public static BodyPartGroupDef Feet;
+    
+    //JobDef
+    public static JobDef BEWH_FelinidNuzzle;
+    public static JobDef BEWH_DoMinotaurRitual;
+    public static JobDef BEWH_HerdstonePray;
+    
+    //WorldObjectDef
+    public static WorldObjectDef BEWH_NavigatorWarpTravel;
+    
+    //MentalBreakDef
+    public static MentalBreakDef Tantrum;
+    
+    //InteractionDef
+    public static InteractionDef BEWH_Nuzzle;
+    
+    //GeneDef
+    public static GeneDef BEWH_FelinidCatlikeMindset;
+    
+    public static GeneDef BEWH_BeastmanHerdstoneAffinity;
+    public static GeneDef BEWH_MinotaurAdrenalSurgeNode;
+
+    public static GeneDef BEWH_NavigtorUnsettlingPresence;
+    public static GeneDef BEWH_NavigtorHouseCastana;
+    public static GeneDef BEWH_NavigtorHouseAchelieux;
+    public static GeneDef BEWH_NavigtorWarpNavigation;
+    
+    public static GeneDef BEWH_OgrynSlowWitted;
+    public static GeneDef BEWH_OgrynToddlerLogic;
+    public static GeneDef BEWH_OgrynBoneEad;
+    
+    public static GeneDef BEWH_RatlingGregarious;
+    public static GeneDef BEWH_RatlingScavengerInstinct;
+
+    //StatDef
+    public static StatDef BEWH_WarpTravelDurationFactor;
+    public static StatDef BEWH_WarpTravelInstability;
+    public static StatDef BEWH_WarpTravelCapacity;
+
+    //DamageDef
+    public static DamageDef BEWH_WarpGaze;
+
+    //LetterDef
+    public static LetterDef BEWH_WarpTravel;
+    
+    public static ThingDef BEWH_HerdstoneRaid;
+    
+    public static ThingDef BEWH_HerdstonePlayer;
+    public static ThingDef BEWH_HerdstoneConduitPlayer;
+
+    public static ThingDef BEWH_NavigatorCriticalReactor;
+    
+    public static ThingDef DevilstrandCloth;
+
+    public static ThingDef PollutionPump;
+    public static ThingDef SchoolDesk;
+    public static ThingDef PodLauncher;
+    
+    //XenotypeDef
+    public static XenotypeDef BEWH_Navigator;
+    public static XenotypeDef BEWH_Beastman;
+    
+    //PawnKindDef
+    public static PawnKindDef BEWH_HerdstoneBornMinotaur;
+    public static PawnKindDef BEWH_BeastmanFactionBeastmanShaman;
+    public static PawnKindDef BEWH_BeastmanFactionBeastman;
+    public static PawnKindDef BEWH_BeastmanFactionMinotaur;
+    public static PawnKindDef BEWH_NavigatorRescue;
+    
+    //DutyDef
+    public static DutyDef BEWH_BestmanShamanChant;
+    
+    //EffecterDef
+    public static EffecterDef BEWH_HerdstoneChant;
+
+    //QuestScriptDef
+    public static QuestScriptDef BEWH_NavigatorDowned;
+
+    //RaidStrategyDef
+    public static RaidStrategyDef ImmediateAttackSmart;
+
+    static Abhuman40kDefOf()
+    {
+        DefOfHelper.EnsureInitializedInCtor(typeof(Abhuman40kDefOf));
+    }
+}

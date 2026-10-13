@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <AbilityCategoryDef>
+    <defName>BEWH_Navigator</defName>
+    <displayOrder>1000</displayOrder>
+  </AbilityCategoryDef>
+
+  <!-- Expose Warp Eye -->
+  <AbilityDef>
+    <defName>BEWH_NavigatorExposeWarpEye</defName>
+    <label>piercing gaze</label>
+    <description>The Navigator can open their third eye and gaze upon a victim. All but the strongest will perish when meeting their gaze.</description>
+    <iconPath>UI/Abilities/BEWH_Ability_NavigatorPiercingGaze</iconPath>
+    <cooldownTicksRange>900000</cooldownTicksRange>
+    <aiCanUse>false</aiCanUse>
+    <category>BEWH_Navigator</category>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>10</range>
+      <warmupTime>0.5</warmupTime>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetAnimals>false</canTargetAnimals>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="Abhuman40k.CompProperties_AbilityWarpEyeGaze">
+        <stunnedNotKilledGeneDef>
+          <li>BEWH_NavigtorWarpEye</li>
+        </stunnedNotKilledGeneDef>
+        <stunnedNotKilledPawnKindDef />
+      </li>
+      <li Class="Core40k.CompProperties_DisableIfApparelCovers">
+        <disabledIfCovered>
+          <li>UpperHead</li>
+          <li>FullHead</li>
+        </disabledIfCovered>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <!-- Held In My Gaze -->
+  <AbilityDef>
+    <defName>BEWH_NavigatorHeldInGaze</defName>
+    <label>held in my gaze</label>
+    <description>The Navigator fixes a victim with the warp eye and refuses to let go. So long as the Navigator stands still and keeps their gaze, the victim can neither move nor strike. The effort drains the Navigator's mind, and larger victims are harder to hold. If the Navigator holds on too long, they will collapse.</description>
+    <iconPath>UI/Abilities/BEWH_Ability_NavigatorPiercingGaze</iconPath>
+    <cooldownTicksRange>2500</cooldownTicksRange>
+    <waitForJobEnd>true</waitForJobEnd>
+    <jobDef>BEWH_HoldInGaze</jobDef>
+    <aiCanUse>false</aiCanUse>
+    <category>BEWH_Navigator</category>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>10.9</range>
+      <warmupTime>0.5</warmupTime>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="Abhuman40k.CompProperties_AbilityHeldInGaze">
+        <strainHediff>BEWH_NavigatorGazeStrain</strainHediff>
+        <heldHediff>BEWH_HeldInGaze</heldHediff>
+        <strainPerTick>0.0006</strainPerTick>
+        <bodySizeFactorRange>0.5~3</bodySizeFactorRange>
+        <stunPulseTicks>30</stunPulseTicks>
+        <checkIntervalTicks>60</checkIntervalTicks>
+        <requiresLineOfSight>true</requiresLineOfSight>
+        <blockedIfCovered>
+          <li>UpperHead</li>
+          <li>FullHead</li>
+        </blockedIfCovered>
+      </li>
+      <li Class="Core40k.CompProperties_DisableIfApparelCovers">
+        <disabledIfCovered>
+          <li>UpperHead</li>
+          <li>FullHead</li>
+        </disabledIfCovered>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <!-- Warp Travel -->
+  <VEF.Abilities.AbilityDef>
+    <defName>BEWH_NavigatorWarpTravel</defName>
+    <label>course untraveled</label>
+    <description>The Navigator can step outside the normal flow of time and choose an alternative future in which they occupy a different position in a physical world. Depending on their ability, they can bring several colonists with them. However, the distance they can travel is limited and the process is unpredictable, taking wildly varying amounts of time.</description>
+    <iconPath>UI/Abilities/BEWH_Ability_NavigatorCourseUntraveled</iconPath>
+    <abilityClass>Abhuman40k.Ability_WarpEyeWarpTravel</abilityClass>
+    <cooldownTime>60000</cooldownTime>
+    <castTime>625</castTime>
+    <range>10.9</range>
+    <rangeStatFactors>
+      <PsychicSensitivity>1.5</PsychicSensitivity>
+    </rangeStatFactors>
+    <radius>3.9</radius>
+    <targetMode>Tile</targetMode>
+    <worldTargeting>true</worldTargeting>
+    <needsTicking>true</needsTicking>
+    <showGizmoOnWorldView>true</showGizmoOnWorldView>
+  </VEF.Abilities.AbilityDef>
+
+  <!-- Assign Bodyguard -->
+  <AbilityDef>
+    <defName>BEWH_NavigatorAssignBodyguard</defName>
+    <label>assign bodyguard</label>
+    <description>The Navigator designates a colonist as their bodyguard protector, a practice that is typical of House Belisarius. The chosen pawn gains increased movement speed and combat prowess, as well as reduced incoming damage.</description> <!-- Removed the reference to “wolfblade” here because that term applies exclusively to Astartes, whereas this ability can be applied to any colonist now. Same for the hediff applied. ~Cheese -->
+    <iconPath>UI/Abilities/BEWH_Ability_NavigatorBodyguard</iconPath>
+    <cooldownTicksRange>1</cooldownTicksRange>
+    <jobDef>CastAbilityOnThingMelee</jobDef>
+    <stunTargetWhileCasting>True</stunTargetWhileCasting>
+    <showPsycastEffects>False</showPsycastEffects>
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <showWhenDrafted>true</showWhenDrafted>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <statBases>
+      <Ability_Duration>1000</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <range>-1</range>
+      <warmupTime>1</warmupTime>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetBloodfeeders>true</canTargetBloodfeeders>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="Abhuman40k.CompProperties_AbilityGiveBodyguardHediff">
+        <hediffDef>BEWH_NavigtorHouseBelisariusBuff</hediffDef>
+      </li>
+    </comps>
+  </AbilityDef>
+
+</Defs>

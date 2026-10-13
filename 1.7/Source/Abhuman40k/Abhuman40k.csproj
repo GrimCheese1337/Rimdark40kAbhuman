@@ -1,0 +1,67 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Abhuman40k</RootNamespace>
+    <AssemblyName>Abhuman40k</AssemblyName>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Deterministic>true</Deterministic>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <RimWorldDir>$(MSBuildProjectDirectory)\..\..\..\..\..</RimWorldDir>
+    <WorkshopDir>$(RimWorldDir)\..\..\workshop\content\294100</WorkshopDir>
+    <VEFDir Condition="Exists('$(WorkshopDir)\2023507013\1.7\Assemblies\VEF.dll')">$(WorkshopDir)\2023507013\1.7\Assemblies</VEFDir>
+    <VEFDir Condition="'$(VEFDir)' == ''">$(WorkshopDir)\2023507013\1.6\Assemblies</VEFDir>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Assemblies\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <DebugType>portable</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Quest\StorytellerCompProperties_NavigatorDowned.cs" />
+    <Compile Remove="Quest\StorytellerComp_NavigatorDowned.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\..\..\..\workshop\content\294100\2009463077\1.7\Assemblies\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(RimWorldDir)\Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityStubs">
+      <HintPath>$(RimWorldDir)\UnityStubs.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="$(RimWorldDir)\Waylith.dll;$(RimWorldDir)\Waylith.*.dll;$(RimWorldDir)\Brutal.*.dll">
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Core40k">
+      <HintPath>$(RimWorldDir)\Mods\Rimdark40kFramework\1.7\Assemblies\Core40k.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="VEF">
+      <HintPath>$(VEFDir)\VEF.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>

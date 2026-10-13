@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <StyleItemCategoryDef>
+    <defName>BEWH_BeardBeastmen</defName>
+    <label>beastman</label>
+  </StyleItemCategoryDef>
+
+  <BeardDef Name="BEWH_BeardBeastmen" Abstract="true">
+    <styleGender>Male</styleGender>
+    <requiredGene>BEWH_BeastmanGoatPhysique</requiredGene>
+    <category>BEWH_BeardBeastmen</category>
+    <styleTags>
+      <li>Beastman</li>
+      <li>BeardPunk</li>
+      <li>BeardShort</li>
+      <li>BeardUrban</li>
+      <li>BeardRural</li>
+      <li>BeardTribal</li>
+      <li>BeardBushy</li>
+      <li>BeardLong</li>
+      <li>Bushy</li>
+      <li>MoustacheOnly</li>
+      <li>NoBeard</li>
+    </styleTags>
+  </BeardDef>
+  
+  <BeardDef ParentName="BEWH_BeardBeastmen">
+    <defName>BEWH_BeastmanBeard1</defName>
+    <label>beastman beard 1</label>
+    <texPath>Things/Pawn/Humanlike/Beastman/Beards/BEWH_BeastmanBeard1</texPath>
+  </BeardDef>
+
+  <BeardDef ParentName="BEWH_BeardBeastmen">
+    <defName>BEWH_BeastmanBeard2</defName>
+    <label>beastman beard 2</label>
+    <texPath>Things/Pawn/Humanlike/Beastman/Beards/BEWH_BeastmanBeard2</texPath>
+  </BeardDef>
+
+  <BeardDef ParentName="BEWH_BeardBeastmen">
+    <defName>BEWH_BeastmanBeard3</defName>
+    <label>beastman beard 3</label>
+    <texPath>Things/Pawn/Humanlike/Beastman/Beards/BEWH_BeastmanBeard3</texPath>
+  </BeardDef>
+
+  <BeardDef ParentName="BEWH_BeardBeastmen">
+    <defName>BEWH_BeastmanBeard4</defName>
+    <label>beastman beard 4</label>
+    <texPath>Things/Pawn/Humanlike/Beastman/Beards/BEWH_BeastmanBeard4</texPath>
+  </BeardDef>
+
+  <BeardDef ParentName="BEWH_BeardBeastmen">
+    <defName>BEWH_BeastmanBeard5</defName>
+    <label>beastman beard 5</label>
+    <texPath>Things/Pawn/Humanlike/Beastman/Beards/BEWH_BeastmanBeard5</texPath>
+  </BeardDef>
+
+  <BeardDef ParentName="BEWH_BeardBeastmen">
+    <defName>BEWH_BeastmanBeard6</defName>
+    <label>beastman beard 6</label>
+    <texPath>Things/Pawn/Humanlike/Beastman/Beards/BEWH_BeastmanBeard6</texPath>
+  </BeardDef>
+
+</Defs>

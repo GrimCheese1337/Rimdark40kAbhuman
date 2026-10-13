@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Biochemical Ogryn Neural Enhancer - B.O.N.E. -->
+    <RecipeDef ParentName="SurgeryFlesh">
+        <defName>BEWH_OgrynBONER</defName>
+        <label>Install BONE</label>
+        <description>The Biochemical Ogryn Neural Enhancement Regulator, or BONE for short, is a specialized implant that can be installed into an Ogryn's pituitary gland through a specialized medical procedure. It enhances the recipient's intellectual capabilities to a somewhat decent level.</description>
+        <jobString>Giving {0} a BONE</jobString>
+        <workerClass>Abhuman40k.Recipe_Boner</workerClass>
+        <successfullyRemovedHediffMessage>{0} has successfully been given a BONE</successfullyRemovedHediffMessage>
+        <workAmount>2200</workAmount>
+        <hideBodyPartNames>true</hideBodyPartNames>
+        <targetsBodyPart>false</targetsBodyPart>    
+        <surgerySuccessChanceFactor>1</surgerySuccessChanceFactor>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>MedicineUltratech</li>
+                    </thingDefs>
+                </filter>
+                <count>3</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>MedicineUltratech</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <skillRequirements>
+            <Medicine>11</Medicine>
+        </skillRequirements>
+        <recipeUsers>
+            <li>Human</li>
+        </recipeUsers>
+    </RecipeDef>
+
+</Defs>

@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Herdstone Raid -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>BEWH_HerdstoneRaid</defName>
+    <label>herdstone</label>
+    <description>No one knows how this pile of junk stays together at all, but whenever anyone tries to destroy it, it proves to be incredibly durable. And worst of all, it causes fleeting rifts in the Warp, allowing malevolent horned creatures to invade this world.</description>
+    <thingClass>Abhuman40k.Building_HerdstoneEnemy</thingClass>
+    <rotatable>false</rotatable>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <tickerType>Normal</tickerType>
+    <blockWind>true</blockWind>
+    <fillPercent>1</fillPercent>
+    <pathCost>50</pathCost>
+    <castEdgeShadows>false</castEdgeShadows>
+    <graphicData>
+      <texPath>Things/Building/BEWH_HerdStone_Raid</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(4,5)</drawSize>
+      <drawOffset>(0, 0, 0.6)</drawOffset>
+    </graphicData>
+    <size>(3, 3)</size>
+    <canOverlapZones>false</canOverlapZones>
+    <defaultPlacingRot>North</defaultPlacingRot>
+    <uiOrder>2100</uiOrder>
+    <statBases>
+      <MaxHitPoints>2000</MaxHitPoints>
+      <WorkToBuild>100</WorkToBuild>
+      <Mass>85</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <costList>
+      <Steel>100</Steel>
+    </costList>
+    <comps>
+      <li Class="Abhuman40k.CompProperties_CustomCauseHediff_Extra_AoE">
+        <hediff>BEWH_BeastmanRaidHerdstoneAuraBuff</hediff>
+        <range>15</range>
+        <checkInterval>250</checkInterval>
+        <hediffDuration>900</hediffDuration>
+        <startingSeverity>1</startingSeverity>
+        <sameRoomOnly>false</sameRoomOnly>
+        <sameFactionOnly>true</sameFactionOnly>
+        <networkWeight>2</networkWeight>
+        <requiredGene>BEWH_BeastmanHerdstoneAffinity</requiredGene>
+      </li>
+    </comps>
+    <specialDisplayRadius>15</specialDisplayRadius>
+  </ThingDef>
+
+  <!-- Herdstone (Player version) -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>BEWH_HerdstonePlayer</defName>
+    <label>herdstone</label>
+    <description>The Beastmen's Sacred Menhir. These monuments are the centerpiece of any Beastmen settlement. No one fully understands how they work, but their presence strengthens the Beastmen, binding the herd together and enhancing their primal power. When Beastmen are in close proximity to the Herdstone, they become stronger than ever before.</description>
+    <thingClass>Abhuman40k.Building_Herdstone</thingClass>
+    <rotatable>false</rotatable>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <fillPercent>1</fillPercent>
+    <pathCost>50</pathCost>
+    <castEdgeShadows>false</castEdgeShadows>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Building/BEWH_HerdStone_Player</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(4,5)</drawSize>
+      <drawOffset>(0, 0, 0.6)</drawOffset>
+    </graphicData>
+    <size>(3, 3)</size>
+    <drawerType>RealtimeOnly</drawerType>
+    <canOverlapZones>false</canOverlapZones>
+    <defaultPlacingRot>North</defaultPlacingRot>
+    <designationCategory>BEWH_RimDarkCategory</designationCategory>
+    <uiOrder>2100</uiOrder>
+    <statBases>
+      <MaxHitPoints>2000</MaxHitPoints>
+      <WorkToBuild>9000</WorkToBuild>
+      <Mass>85</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <stuffCategories>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>250</costStuffCount>
+    <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+    <building>
+      <relatedBuildCommands>
+        <li>BEWH_HerdstoneConduitPlayer</li>
+      </relatedBuildCommands>
+    </building>
+    <placeWorkers>
+      <li>Core40k.PlaceWorker_OnlyOnePerMap</li>
+      <li>Abhuman40k.PlaceWorker_OnlyAvailableWithBeastmanInColony</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>BEWH_Herdstones</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="Abhuman40k.CompProperties_CustomCauseHediff_Extra_AoE">
+        <hediff>BEWH_BeastmanHerdstoneAuraBuff</hediff>
+        <range>15</range>
+        <checkInterval>250</checkInterval>
+        <hediffDuration>900</hediffDuration>
+        <startingSeverity>1</startingSeverity>
+        <sameRoomOnly>false</sameRoomOnly>
+        <sameFactionOnly>true</sameFactionOnly>
+        <networkWeight>2</networkWeight>
+        <requiredGene>BEWH_BeastmanHerdstoneAffinity</requiredGene>
+      </li>
+      <li Class="CompProperties_FireOverlay">
+        <fireSize>0.8</fireSize>
+        <offset>(0,0,-1.0)</offset>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>10</glowRadius>
+        <glowColor>(252,187,113,0)</glowColor>
+      </li>
+    </comps>
+    <specialDisplayRadius>15</specialDisplayRadius>
+  </ThingDef>
+
+  <!-- Can build 1 at 2 pawns with herdstone affinity to a max of 9 at 20 pawns with herstone affinity, follows some curve i made -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>BEWH_HerdstoneConduitPlayer</defName>
+    <label>herdstone marker</label>
+    <description>Small stone markers etched with ancient runes, these serve as conduits for the Herdstone's power. Each of these markers extends the reach of the Herdstone, spreading its influence across a wider area. However, the Herdstone's power is finite and remains unchanged, so the more markers are raised, the more thinly its strength is spread. A greater number of markers provides broader coverage, but weaker protection in any given place.\n\nThe number of Herdstone Markers you can build depends on how many colonists with the 'Herdstone Affinity' gene are present.</description>
+    <thingClass>Abhuman40k.Building_HerdstoneConduit</thingClass>
+    <containedPawnsSelectable>true</containedPawnsSelectable>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <castEdgeShadows>False</castEdgeShadows>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Building/HerdStoneConduit</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shaderType>Cutout</shaderType>
+      <drawSize>(1.8,1.8)</drawSize>
+      <drawOffset>(0, 0, 0.15)</drawOffset>
+    </graphicData>
+    <size>(1, 1)</size>
+    <canOverlapZones>false</canOverlapZones>
+    <defaultPlacingRot>North</defaultPlacingRot>
+    <designationCategory>BEWH_RimDarkCategory</designationCategory>
+    <uiOrder>2100</uiOrder>
+    <uiIconScale>0.55</uiIconScale>
+    <statBases>
+      <MaxHitPoints>2000</MaxHitPoints>
+      <WorkToBuild>9000</WorkToBuild>
+      <Mass>85</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <stuffCategories>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>250</costStuffCount>
+    <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+    <placeWorkers>
+      <li>Abhuman40k.PlaceWorker_OnlyAvailableWithHerdstoneOnMap</li>
+      <li>Abhuman40k.PlaceWorker_BeastmanInColonyLimited</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>BEWH_Herdstones</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="Abhuman40k.CompProperties_CustomCauseHediff_Extra_AoE">
+        <hediff>BEWH_BeastmanHerdstoneAuraBuff</hediff>
+        <range>9</range>
+        <checkInterval>250</checkInterval>
+        <hediffDuration>900</hediffDuration>
+        <startingSeverity>1</startingSeverity>
+        <sameRoomOnly>false</sameRoomOnly>
+        <sameFactionOnly>true</sameFactionOnly>
+        <requiredGene>BEWH_BeastmanHerdstoneAffinity</requiredGene>
+      </li>
+    </comps>
+    <specialDisplayRadius>9</specialDisplayRadius>
+  </ThingDef>
+
+</Defs>

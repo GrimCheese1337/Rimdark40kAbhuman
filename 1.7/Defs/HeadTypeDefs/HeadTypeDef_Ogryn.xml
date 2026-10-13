@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <HeadTypeDef ParentName="AverageBase">
+        <defName>BEWH_OgrynHeadM1</defName>
+        <graphicPath>Things/Pawn/Humanlike/Ogryn/Heads/BEWH_Male_OgrynHead1</graphicPath>
+        <randomChosen>false</randomChosen>
+        <gender>Male</gender>
+        <requiredGenes>
+            <li>BEWH_OgrynBrutePhysique</li>
+        </requiredGenes>
+        <selectionWeight>1000</selectionWeight>
+    </HeadTypeDef>
+
+    <HeadTypeDef ParentName="AverageBase">
+        <defName>BEWH_OgrynHeadM2</defName>
+        <graphicPath>Things/Pawn/Humanlike/Ogryn/Heads/BEWH_Male_OgrynHead2</graphicPath>
+        <randomChosen>false</randomChosen>
+        <gender>Male</gender>
+        <requiredGenes>
+            <li>BEWH_OgrynBrutePhysique</li>
+        </requiredGenes>
+        <selectionWeight>400</selectionWeight>
+    </HeadTypeDef>
+
+    <HeadTypeDef ParentName="AverageBase">
+        <defName>BEWH_OgrynHeadM3</defName>
+        <graphicPath>Things/Pawn/Humanlike/Ogryn/Heads/BEWH_Male_OgrynHead3</graphicPath>
+        <randomChosen>false</randomChosen>
+        <gender>Male</gender>
+        <requiredGenes>
+            <li>BEWH_OgrynBrutePhysique</li>
+        </requiredGenes>
+        <selectionWeight>500</selectionWeight>
+    </HeadTypeDef>
+
+    <HeadTypeDef ParentName="AverageBase">
+        <defName>BEWH_OgrynHeadM4</defName>
+        <graphicPath>Things/Pawn/Humanlike/Ogryn/Heads/BEWH_Male_OgrynHead4</graphicPath>
+        <randomChosen>false</randomChosen>
+        <gender>Male</gender>
+        <requiredGenes>
+            <li>BEWH_OgrynBrutePhysique</li>
+        </requiredGenes>
+        <selectionWeight>500</selectionWeight>
+    </HeadTypeDef>
+
+	<HeadTypeDef ParentName="AverageBase">
+        <defName>BEWH_OgrynHeadF</defName>
+        <graphicPath>Things/Pawn/Humanlike/Ogryn/Heads/BEWH_Female_OgrynHead</graphicPath>
+        <randomChosen>false</randomChosen>
+        <gender>Female</gender>
+        <requiredGenes>
+            <li>BEWH_OgrynBrutePhysique</li>
+        </requiredGenes>
+        <selectionWeight>1000</selectionWeight>
+    </HeadTypeDef>
+
+</Defs>

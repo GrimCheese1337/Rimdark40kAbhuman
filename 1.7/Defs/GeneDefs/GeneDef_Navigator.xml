@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- Navigator: Warp Eye -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_NavigtorWarpEye</defName>
+        <label>third eye</label>
+        <description>Carriers of this gene have a third eye on their forehead, commonly called the Warp Eye. While it performs ordinary visual functions perfectly well, it is also capable of glimpsing into the warp itself - a sight that lays bare what hides from ordinary eyes, and occasionally proves lethal to whatever meets it.</description>
+        <iconPath>UI/Genes/Navigator/BEWH_ThirdEye</iconPath>
+        <geneClass>Core40k.Gene_GiveVEFAbility</geneClass>
+        <biostatCpx>4</biostatCpx>
+        <biostatMet>-3</biostatMet>
+        <displayOrderInCategory>61</displayOrderInCategory>
+        <exclusionTags>
+            <li>Psyker</li>
+            <li>Pariah</li>
+        </exclusionTags>
+        <capMods>
+            <li>
+                <capacity>Consciousness</capacity>
+                <offset>0.25</offset>
+            </li>
+            <li>
+                <capacity>Sight</capacity>
+                <offset>0.5</offset>
+            </li>
+        </capMods>
+        <abilities>
+            <li>BEWH_NavigatorExposeWarpEye</li>
+            <li>BEWH_NavigatorHeldInGaze</li>
+        </abilities>
+        <descriptionHyperlinks>
+            <AbilityDef>BEWH_NavigatorExposeWarpEye</AbilityDef>
+            <AbilityDef>BEWH_NavigatorHeldInGaze</AbilityDef>
+        </descriptionHyperlinks>
+        <customEffectDescriptions>
+            <li>Reveals psychically concealed creatures within 12.9 tiles, so long as the warp eye is uncovered.</li>
+        </customEffectDescriptions>
+        <modExtensions>
+            <li Class="Abhuman40k.DefModExtension_RevealsInvisible">
+                <radius>12.9</radius>
+                <psychicSensitivityFactor>0.5</psychicSensitivityFactor>
+                <requiresLineOfSight>true</requiresLineOfSight>
+                <hostileOnly>false</hostileOnly>
+                <blockedIfCovered>
+                    <li>UpperHead</li>
+                    <li>FullHead</li>
+                </blockedIfCovered>
+            </li>
+        </modExtensions>
+        <renderNodeProperties>
+            <li>
+                <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+                <workerClass>Core40k.PawnRenderNodeWorker_HeadCovered</workerClass>
+                <texPath>Things/Pawn/Humanlike/Navigator/HeadAttachments/BEWH_Male_WarpEye</texPath>
+                <texPathFemale>Things/Pawn/Humanlike/Navigator/HeadAttachments/BEWH_Female_WarpEye</texPathFemale>
+                <drawSize>0.5</drawSize>
+                <parentTagDef>Head</parentTagDef>
+                <visibleFacing>
+                    <li>East</li>
+                    <li>South</li>
+                    <li>West</li>
+                </visibleFacing>
+                <drawData>
+                    <defaultData>
+                        <layer>60</layer>
+                    </defaultData>
+                </drawData>
+            </li>
+        </renderNodeProperties>
+    </GeneDef>
+
+    <!-- Navigator: Warp Navigation -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_NavigtorWarpNavigation</defName>
+        <label>warp navigation</label>
+        <description>Carriers of this gene can navigate the tides of the Immaterium, opening passages through the warp to traverse vast distances. This instinct extends to piloting vessels in realspace as well.</description>
+        <iconPath>UI/Genes/Navigator/BEWH_WarpNavigation</iconPath>
+        <geneClass>Core40k.Gene_GiveVEFAbility</geneClass>
+        <biostatCpx>4</biostatCpx>
+        <biostatMet>-2</biostatMet>
+        <displayOrderInCategory>62</displayOrderInCategory>
+
+        <statOffsets>
+            <PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.4</PilotingAbility>
+            <CaravanBonusSpeedFactor>0.2</CaravanBonusSpeedFactor>
+            <!-- Framework stats. Always defined; inert unless Odyssey / Save Our Ship 2 is loaded. -->
+            <BEWH_GravEngineCooldownFactor>-0.2</BEWH_GravEngineCooldownFactor>
+            <BEWH_ShipEvasionSkillOffset>3</BEWH_ShipEvasionSkillOffset>
+        </statOffsets>
+        <customEffectDescriptions>
+            <li>Gives ability: Warp travel</li>
+        </customEffectDescriptions>
+        <descriptionHyperlinks>
+            <VEF.Abilities.AbilityDef>BEWH_NavigatorWarpTravel</VEF.Abilities.AbilityDef>
+        </descriptionHyperlinks>
+        <modExtensions>
+            <li Class="Core40k.DefModExtension_GivesVEFAbility">
+                <abilityDefs>
+                    <li>BEWH_NavigatorWarpTravel</li>
+                </abilityDefs>
+            </li>
+        </modExtensions>
+    </GeneDef>
+
+    <!-- Navigator: Unsettling Presence -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_NavigtorUnsettlingPresence</defName>
+        <label>unsettling presence</label>
+        <description>Carriers of this gene unsettle those around them, whether through the eye on their brow, the stillness of a mind touched by the warp, or something no ordinary human can quite put a name to.</description>
+        <iconPath>UI/Genes/Navigator/BEWH_UnsettlingPresence</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>1</biostatMet>
+        <displayOrderInCategory>63</displayOrderInCategory>
+        <forcedHeadTypes>
+            <li>BEWH_NavigatorHeadM</li>
+            <li>BEWH_NavigatorHeadF</li>
+        </forcedHeadTypes>
+
+        <customEffectDescriptions>
+            <li>Other pawns have decreased opinion of this pawn</li>
+        </customEffectDescriptions>
+    </GeneDef>
+
+    <!-- Navigator: Long Lived -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_NavigtorLongLived</defName>
+        <label>long lived</label>
+        <description>Carriers of this gene age at a fraction of the ordinary rate past adulthood. Navigators are expected to outlive the ships they first charted a course for, and most do.</description>
+        <iconPath>UI/Genes/Navigator/BEWH_Long-lived</iconPath>
+        <biostatCpx>3</biostatCpx>
+        <biostatMet>-1</biostatMet>
+        <displayOrderInCategory>64</displayOrderInCategory>
+
+        <biologicalAgeTickFactorFromAgeCurve>
+            <points>
+                <li>(18, 0.2)</li>
+            </points>
+        </biologicalAgeTickFactorFromAgeCurve>
+    </GeneDef>
+
+    <!-- Navigator: Navis Nobilite -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_NavigtorNavisNobilite</defName>
+        <label>navis nobilite</label>
+        <description>Carriers of this gene are born into one of the noble navigator houses, inheriting its bloodline traits along with its expectations.</description>
+        <iconPath>UI/Genes/Navigator/BEWH_NavisNobilite</iconPath>
+        <geneClass>Core40k.Gene_AddRandomGeneAndOrTraitByWeight</geneClass>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>-1</biostatMet>
+        <displayOrderInCategory>65</displayOrderInCategory>
+
+        <customEffectDescriptions>
+            <li>Belongs to a noble navigator house and expects to be treated as such</li>
+        </customEffectDescriptions>
+
+        <modExtensions>
+            <li Class="Core40k.DefModExtension_AddRandomGeneByWeight">
+                <possibleGenesToGive>
+                    <li>
+                        <key>BEWH_NavigtorHouseAchelieux</key>
+                        <value>25</value>
+                    </li>
+                    <li>
+                        <key>BEWH_NavigtorHouseBelisarius</key>
+                        <value>25</value>
+                    </li>
+                    <li>
+                        <key>BEWH_NavigtorHouseBrobantis</key>
+                        <value>25</value>
+                    </li>
+                    <li>
+                        <key>BEWH_NavigtorHouseCastana</key>
+                        <value>25</value>
+                    </li>
+                </possibleGenesToGive>
+                <addAsXenogene>false</addAsXenogene>
+                <skipIfAnyAlreadyExistsOnPawn>true</skipIfAnyAlreadyExistsOnPawn>
+            </li>
+        </modExtensions>
+    </GeneDef>
+
+    <!-- Navigator: House Achelieux -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_NavigtorHouseAchelieux</defName>
+        <label>house achelieux</label>
+        <description>Carriers of this gene descend from House Achelieux, long famed among the Navis Nobilite for finding shorter passages through the warp than tradition allowed. Their translations run shorter and their vessels' engines recover faster.</description>
+        <iconPath>UI/Genes/Navigator/BEWH_HouseAchelieux</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <canGenerateInGeneSet>false</canGenerateInGeneSet>
+        <displayOrderInCategory>66</displayOrderInCategory>
+
+        <statOffsets>
+            <BEWH_WarpTravelDurationFactor>-0.5</BEWH_WarpTravelDurationFactor>
+            <BEWH_GravEngineCooldownFactor>-0.15</BEWH_GravEngineCooldownFactor>
+        </statOffsets>
+    </GeneDef>
+
+    <!-- Navigator: House Belisarius -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_NavigtorHouseBelisarius</defName>
+        <label>house belisarius</label>
+        <description>Carriers of this gene descend from House Belisarius, whose Navigators have kept a personal guard at their side since the Great Crusade. They can bind one companion to that duty, and their gaze is wide enough to carry a fuller retinue through the warp than most.</description>
+        <iconPath>UI/Genes/Navigator/BEWH_HouseBelisarius</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <canGenerateInGeneSet>false</canGenerateInGeneSet>
+        <displayOrderInCategory>67</displayOrderInCategory>
+        <geneClass>Abhuman40k.Gene_Belisarius</geneClass>
+
+        <statOffsets>
+            <BEWH_WarpTravelCapacity>6</BEWH_WarpTravelCapacity>
+        </statOffsets>
+        <abilities>
+            <li>BEWH_NavigatorAssignBodyguard</li>
+        </abilities>
+        <descriptionHyperlinks>
+            <AbilityDef>BEWH_NavigatorAssignBodyguard</AbilityDef>
+        </descriptionHyperlinks>
+    </GeneDef>
+
+    <!-- Navigator: House Brobantis -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_NavigtorHouseBrobantis</defName>
+        <label>house brobantis</label>
+        <description>Carriers of this gene descend from House Brobantis, an old mercantile power whose Navigators are renowned for their steady and reliable journeys rather than their speed. Their translations are much calmer than most, their vessels travel further on less fuel, and their caravans maintain a faster pace.</description>
+        <iconPath>UI/Genes/Navigator/BEWH_HouseBrobantis</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <canGenerateInGeneSet>false</canGenerateInGeneSet>
+        <displayOrderInCategory>68</displayOrderInCategory>
+        <statOffsets>
+            <PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.2</PilotingAbility>
+            <CaravanBonusSpeedFactor>0.5</CaravanBonusSpeedFactor>
+            <BEWH_WarpTravelInstability>-0.65</BEWH_WarpTravelInstability>
+            <BEWH_GravshipRangeOffset>12</BEWH_GravshipRangeOffset>
+            <BEWH_GravshipFuelEfficiency>0.2</BEWH_GravshipFuelEfficiency>
+        </statOffsets>
+    </GeneDef>
+
+    <!-- Navigator: House Castana -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_NavigtorHouseCastana</defName>
+        <label>house castana</label>
+        <description>Carriers of this gene descend from House Castana, a house with a rare reputation for warmth among the Navis Nobilite. Whatever sets other Navigators apart in an unsettling way seems not to touch them at all.</description>
+        <iconPath>UI/Genes/Navigator/BEWH_HouseCastana</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <canGenerateInGeneSet>false</canGenerateInGeneSet>
+        <displayOrderInCategory>69</displayOrderInCategory>
+        <capMods>
+            <li>
+                <capacity>Consciousness</capacity>
+                <offset>0.1</offset>
+            </li>
+        </capMods>
+        <customEffectDescriptions>
+            <li>Removes the opinion penalty from the Unsettling Presence gene</li>
+        </customEffectDescriptions>
+    </GeneDef>
+
+</Defs>

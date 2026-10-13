@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <XenotypeDef Name="BEWH_BeastmanXenotype">
+        <defName>BEWH_Beastman</defName>
+        <label>beastman</label>
+        <description>Beastmen (Homo sapiens variatus) are a type of abhuman with bestial mutations that combine human and animal features. They are mainly valued for their bloodlust. While many consider them to be subhuman, these warriors have often proven themselves to be the equal of ordinary humans in terms of intelligence and loyalty.</description>
+        <iconPath>UI/Xenotypes/BEWH_Beastman_icon</iconPath>
+        <inheritable>true</inheritable>
+        <canGenerateAsCombatant>false</canGenerateAsCombatant>
+        <factionlessGenerationWeight>0.2</factionlessGenerationWeight>
+        <genes>
+            <li>BEWH_BeastmanGoatPhysique</li>
+            <li>BEWH_BeastmanHorns</li>
+            <li>BEWH_BeastmanHooved</li>
+            <li>BEWH_BeastmanInnateBloodlust</li>
+            <li>BEWH_BeastmanRowdy</li>
+            <li>BEWH_BeastmanHerdstoneAffinity</li>
+            <li>VoiceRoar</li>
+            <li>AptitudeTerrible_Plants</li>
+            <li>AptitudeTerrible_Intellectual</li>
+            <li>Body_Hulk</li>
+            <li>Body_Standard</li>
+            <li>Hair_DarkBlack</li>
+            <li>Hair_MidBlack</li>
+            <li>Hair_DarkReddish</li>
+            <li>Hair_DarkSaturatedReddish</li>
+            <li>Hair_DarkBrown</li>
+            <li>Hair_ReddishBrown</li>
+            <li>Hair_SandyBlonde</li>
+        </genes>
+    </XenotypeDef>
+
+    <XenotypeDef ParentName="BEWH_BeastmanXenotype">
+        <defName>BEWH_Minotaur</defName>
+        <label>minotaur</label>
+        <description>An unusually large and aggressive strain of giant Beastmen. They are bigger, stronger and more feral. These creatures are closer to the beast than to the human. Their imposing size and wild appearance strike fear into the hearts of those who are unfamiliar with them.</description>
+        <iconPath>UI/Xenotypes/BEWH_Minotaur_icon</iconPath>
+        <factionlessGenerationWeight>0.05</factionlessGenerationWeight>
+        <genes Inherit="False">
+            <li>BEWH_MinotaurPhysique</li>
+            <li>BEWH_MinotaurHorns</li>
+            <li>BEWH_BeastmanHooved</li>
+            <li>BEWH_BeastmanInnateBloodlust</li>
+            <li>BEWH_BeastmanRowdy</li>
+            <li>BEWH_BeastmanHerdstoneAffinity</li>
+            <li>VoiceRoar</li>
+            <li>Hair_BaldOnly</li>
+            <li>Beard_NoBeardOnly</li>
+            <li>AptitudeTerrible_Plants</li>
+            <li>AptitudeTerrible_Intellectual</li>
+            <li>BEWH_MinotaurHerdstoneBorn</li>
+            <li>BEWH_MinotaurAdrenalSurgeNode</li>
+            <li>Body_Hulk</li>
+            <li>Hair_DarkBlack</li>
+            <li>Hair_MidBlack</li>
+            <li>Hair_DarkReddish</li>
+            <li>Hair_DarkBrown</li>
+            <li>Hair_ReddishBrown</li>
+        </genes>
+    </XenotypeDef>
+
+</Defs>

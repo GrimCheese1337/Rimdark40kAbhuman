@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <JobDef>
+        <defName>BEWH_FelinidNuzzle</defName>
+        <driverClass>Abhuman40k.JobDriver_FelinidNuzzle</driverClass>
+        <reportString>nuzzling with TargetA.</reportString>
+        <suspendable>false</suspendable>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
+
+    <JobDef>
+        <defName>BEWH_DoMinotaurRitual</defName>
+        <driverClass>Abhuman40k.JobDriver_SummonMinotaur</driverClass>
+        <reportString>summoning minotaur.</reportString>
+        <suspendable>false</suspendable>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
+
+    <JobDef>
+        <defName>BEWH_HerdstonePray</defName>
+        <driverClass>Abhuman40k.JobDriver_HerdstonePray</driverClass>
+        <reportString>chanting at the herdstone.</reportString>
+        <suspendable>true</suspendable>
+        <casualInterruptible>false</casualInterruptible>
+    </JobDef>
+
+    <JobDef>
+        <defName>BEWH_HoldInGaze</defName>
+        <driverClass>Abhuman40k.JobDriver_HoldInGaze</driverClass>
+        <reportString>holding TargetA in their gaze.</reportString>
+        <casualInterruptible>false</casualInterruptible>
+        <suspendable>false</suspendable>
+        <collideWithPawns>true</collideWithPawns>
+    </JobDef>
+
+</Defs>

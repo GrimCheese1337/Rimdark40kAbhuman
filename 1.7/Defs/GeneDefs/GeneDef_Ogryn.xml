@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- Ogryn: Brute Physique -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_OgrynBrutePhysique</defName>
+        <label>brute physique</label>
+        <description>Carriers of this gene have somewhat brutish features, enormous size, thick skin and increased muscle mass. These features enable them to carry heavier loads, withstand punches more effectively and be overall stronger than the average person.</description>
+        <iconPath>UI/Genes/Ogryn/BEWH_BrutePhysique</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>-4</biostatMet>
+        <displayOrderInCategory>21</displayOrderInCategory>
+        <forcedHeadTypes>
+            <li>BEWH_OgrynHeadM1</li>
+            <li>BEWH_OgrynHeadM2</li>
+            <li>BEWH_OgrynHeadM3</li>
+            <li>BEWH_OgrynHeadM4</li>
+            <li>BEWH_OgrynHeadF</li>
+        </forcedHeadTypes>
+        <statFactors>
+            <MeleeDamageFactor>1.95</MeleeDamageFactor>
+        </statFactors>
+        <statOffsets>
+            <VEF_BodySize_Offset>0.4</VEF_BodySize_Offset>
+            <SuppressionPower MayRequire="Ludeon.RimWorld.Ideology">0.1</SuppressionPower>
+            <StaggerDurationFactor>-0.2</StaggerDurationFactor>
+            <CarryingCapacity>100</CarryingCapacity>
+        </statOffsets>
+        <customEffectDescriptions>
+            <li>Increased size</li>
+        </customEffectDescriptions>
+        <modExtensions>
+            <li Class="Core40k.DefModExtension_GeneExtension">
+                <addedWorldCarryCapacity>500</addedWorldCarryCapacity>
+            </li>
+        </modExtensions>
+        <renderNodeProperties>
+            <li>
+                <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+                <workerClass>Core40k.PawnRenderNodeWorker_HeadCovered</workerClass>
+                <texPath>Things/Pawn/Humanlike/Ogryn/HeadAttachments/Ears/BEWH_OgrynEars</texPath>
+                <drawSize>0.5</drawSize>
+                <colorType>Skin</colorType>
+                <parentTagDef>Head</parentTagDef>
+                <useSkinShader>true</useSkinShader>
+                <useRottenColor>true</useRottenColor>
+                <rotDrawMode>Fresh, Rotting</rotDrawMode>
+                <drawData>
+                    <defaultData>
+                        <layer>70</layer>
+                    </defaultData>
+                </drawData>
+            </li>
+            <li>
+                <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+                <workerClass>Core40k.PawnRenderNodeWorker_HeadCovered</workerClass>
+                <texPaths>
+                    <li>Things/Pawn/Humanlike/Ogryn/HeadAttachments/Ears/BEWH_OgrynEarringsNone</li>
+                </texPaths>
+                <texPathsFemale>
+                    <li>Things/Pawn/Humanlike/Ogryn/HeadAttachments/Ears/BEWH_OgrynEarringsNone</li>
+                    <li>Things/Pawn/Humanlike/Ogryn/HeadAttachments/Ears/BEWH_Female_OgrynEarrings1</li>
+                    <li>Things/Pawn/Humanlike/Ogryn/HeadAttachments/Ears/BEWH_Female_OgrynEarrings2</li>
+                </texPathsFemale>
+                <drawSize>0.5</drawSize>
+                <parentTagDef>Head</parentTagDef>
+                <rotDrawMode>Fresh, Rotting</rotDrawMode>
+                <drawData>
+                    <defaultData>
+                        <layer>70.1</layer>
+                    </defaultData>
+                </drawData>
+            </li>
+        </renderNodeProperties>
+        <exclusionTags>
+            <li>Physique</li>
+            <li>Ears</li>
+        </exclusionTags>
+    </GeneDef>
+
+    <!-- Ogryn: Slow Witted -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_OgrynSlowWitted</defName>
+        <label>slow witted</label>
+        <description>Carriers of this gene have difficulties even with the simplest tasks. They find it extremely hard to focus on work that requires even a relatively small amount of intellectual effort.</description>
+        <iconPath>UI/Genes/Ogryn/BEWH_SlowWitted</iconPath>
+        <geneClass>Core40k.Gene_DisabledBy</geneClass>
+        <biostatCpx>2</biostatCpx>
+        <biostatMet>5</biostatMet>
+        <displayOrderInCategory>22</displayOrderInCategory>
+
+        <statFactors>
+            <GlobalLearningFactor>0.3</GlobalLearningFactor>
+        </statFactors>
+        <aptitudes>
+            <Intellectual>-3</Intellectual>
+        </aptitudes>
+        <disabledWorkTags>
+            <li>Intellectual</li>
+            <li>Animals</li>
+            <li>Artistic</li>
+            <li>Crafting</li>
+            <li>Cooking</li>
+            <li>Caring</li>
+            <li>Constructing</li>
+            <li>PlantWork</li>
+            <li>Social</li>
+        </disabledWorkTags>
+        <modExtensions>
+            <li Class="Core40k.DefModExtension_GeneDisabledBy">
+                <geneDisabledBy>
+                    <li>BEWH_OgrynBoneEad</li>
+                </geneDisabledBy>
+            </li>
+        </modExtensions>
+    </GeneDef>
+
+    <!-- Ogryn: Thick Flesh -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_OgrynThickFlesh</defName>
+        <label>thick flesh</label>
+        <description>Carriers of this gene have exceptionally thick muscle tissue and, overall, increased muscle mass.</description>
+        <iconPath>UI/Genes/Ogryn/BEWH_ThickFlesh</iconPath>
+        <biostatCpx>2</biostatCpx>
+        <biostatMet>-3</biostatMet>
+        <displayOrderInCategory>23</displayOrderInCategory>
+
+        <statFactors>
+            <IncomingDamageFactor>0.85</IncomingDamageFactor>
+            <MeatAmount>1.25</MeatAmount>
+        </statFactors>
+        <statOffsets>
+            <ArmorRating_Blunt>0.20</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.05</ArmorRating_Sharp>
+        </statOffsets>
+        <exclusionTags>
+            <li>MeatAmount</li>
+        </exclusionTags>
+    </GeneDef>
+
+    <!-- Ogryn: Toddler Logic -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_OgrynToddlerLogic</defName>
+        <label>toddler logic</label>
+        <description>Carriers of this gene perceive the world around them with childlike simplicity and naivety. They are unable to participate effectively in negotiations and are easily manipulated. At the same time, they possess an innate kind nature and rarely initiate conflicts.</description>
+        <iconPath>UI/Genes/Ogryn/BEWH_ToddlerLogic</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>2</biostatMet>
+        <displayOrderInCategory>24</displayOrderInCategory>
+
+        <statOffsets>
+            <TradePriceImprovement>-0.85</TradePriceImprovement>
+            <DrugSellPriceImprovement>-0.85</DrugSellPriceImprovement>
+            <NegotiationAbility>-0.85</NegotiationAbility>
+        </statOffsets>
+        <socialFightChanceFactor>0.5</socialFightChanceFactor>
+        <forcedTraits>
+            <li>
+                <def>Kind</def>
+            </li>
+        </forcedTraits>
+    </GeneDef>
+
+    <!-- Ogryn: Bone 'Ead -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_OgrynBoneEad</defName>
+        <label>bone 'ead</label>
+        <description>This character received a BONE implant. Their intellectual abilities have been enhanced, and they can now perform routine tasks.</description>
+        <iconPath>UI/Genes/Ogryn/BEWH_BoneEad</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>3</biostatMet>
+        <displayOrderInCategory>25</displayOrderInCategory>
+
+        <statFactors>
+            <GlobalLearningFactor>0.95</GlobalLearningFactor>
+        </statFactors>
+        <aptitudes>
+            <Intellectual>1</Intellectual>
+        </aptitudes>
+    </GeneDef>
+
+
+</Defs>
