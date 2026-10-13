@@ -1,14 +1,11 @@
 ﻿using RimWorld;
 using VEF;
-using VEF.Planet;
 using Verse;
 
 namespace Abhuman40k;
 
 public class BeastmanSiegeUtility
 {
-	private static SiegeParameterSetDef customParams;
-
 	public static Blueprint_Build PlaceBlueprint(LordToilData_SiegeBeastman data, Map map, Faction placeFaction)
 	{
 		NonPublicFields.SiegeBlueprintPlacer_center() = data.siegeCenter;

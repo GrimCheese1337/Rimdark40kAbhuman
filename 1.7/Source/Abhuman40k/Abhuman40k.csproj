@@ -16,8 +16,7 @@
     <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
     <RimWorldDir>$(MSBuildProjectDirectory)\..\..\..\..\..</RimWorldDir>
     <WorkshopDir>$(RimWorldDir)\..\..\workshop\content\294100</WorkshopDir>
-    <VEFDir Condition="Exists('$(WorkshopDir)\2023507013\1.7\Assemblies\VEF.dll')">$(WorkshopDir)\2023507013\1.7\Assemblies</VEFDir>
-    <VEFDir Condition="'$(VEFDir)' == ''">$(WorkshopDir)\2023507013\1.6\Assemblies</VEFDir>
+    <VEFDir>$(WorkshopDir)\2023507013\1.7\Assemblies</VEFDir>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
