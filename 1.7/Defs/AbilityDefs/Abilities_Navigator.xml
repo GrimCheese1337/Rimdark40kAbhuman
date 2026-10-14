@@ -138,7 +138,7 @@
         <canTargetAnimals>false</canTargetAnimals>
         <canTargetMechs>false</canTargetMechs>
         <canTargetBloodfeeders>true</canTargetBloodfeeders>
-        <neverTargetHostileFaction>true</neverTargetHostileFaction>
+        <onlyTargetColonists>true</onlyTargetColonists>
       </targetParams>
     </verbProperties>
     <comps>
