@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Core40k;
 using RimWorld;
 using Verse;
 
@@ -179,6 +180,18 @@ public class Building_Herdstone : Building
         else
         {
             stringBuilder.AppendTagged("BEWH.Abhuman.Beastman.HerdstoneReadyForRitual".Translate());
+        }
+
+        if (Spawned)
+        {
+            var markerCount = Map.listerBuildings.CountBuildingColonistOfDef(Abhuman40kDefOf.BEWH_HerdstoneConduitPlayer);
+            var affinityPawns = PlaceWorker_BeastmanInColonyLimited.AffinityPawnCount(Map);
+            var allowedMarkers = PlaceWorker_BeastmanInColonyLimited.AllowedConduits(affinityPawns);
+            var neededPawns = PlaceWorker_BeastmanInColonyLimited.AffinityPawnsForNextConduit(affinityPawns);
+            stringBuilder.AppendLine();
+            stringBuilder.Append(neededPawns < 0
+                ? "BEWH.Abhuman.Beastman.HerdstoneMarkersMax".Translate(markerCount, allowedMarkers).Resolve()
+                : "BEWH.Abhuman.Beastman.HerdstoneMarkers".Translate(markerCount, allowedMarkers, neededPawns).Resolve());
         }
             
         return stringBuilder.ToString();

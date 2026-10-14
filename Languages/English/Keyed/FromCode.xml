@@ -12,6 +12,8 @@
     <BEWH.Abhuman.Beastman.HerdstoneNoAffinityGene>Does not have the Herdstone Affinity gene.</BEWH.Abhuman.Beastman.HerdstoneNoAffinityGene>
     <BEWH.Abhuman.Beastman.HerdstoneTimeUntillBirth>Ritual time remaining</BEWH.Abhuman.Beastman.HerdstoneTimeUntillBirth>
     <BEWH.Abhuman.Beastman.HerdstoneReadyForRitual>Can start summoning ritual</BEWH.Abhuman.Beastman.HerdstoneReadyForRitual>
+    <BEWH.Abhuman.Beastman.HerdstoneMarkers>Markers: {0} / {1} (next at {2} Herdstone Affinity colonists)</BEWH.Abhuman.Beastman.HerdstoneMarkers>
+    <BEWH.Abhuman.Beastman.HerdstoneMarkersMax>Markers: {0} / {1} (maximum)</BEWH.Abhuman.Beastman.HerdstoneMarkersMax>
     <BEWH.Abhuman.Beastman.HerdstoneCooldown>Time until ritual can be performed</BEWH.Abhuman.Beastman.HerdstoneCooldown>
 
     <BEWH.Abhuman.Beastman.SpawnedMinotaurLetter>Herdstone Born!</BEWH.Abhuman.Beastman.SpawnedMinotaurLetter>
@@ -52,7 +54,9 @@
     <!-- Placement Limit -->
     <BEWH.Abhuman.PlacementLimit.RequiresBeastman>Can only be placed while a colonist with the 'Herdstone Affinity' gene is present on the map.</BEWH.Abhuman.PlacementLimit.RequiresBeastman>
     <BEWH.Abhuman.PlacementLimit.RequiresHerdstone>Requires a player-built Herdstone to be present on the map.</BEWH.Abhuman.PlacementLimit.RequiresHerdstone>
-    <BEWH.Abhuman.PlacementLimit.HerdstoneConduitLimit>Marker limit reached: {1}/{0}. More colonists with the 'Herdstone Affinity' gene are required to place additional markers.</BEWH.Abhuman.PlacementLimit.HerdstoneConduitLimit>
+    <BEWH.Abhuman.PlacementLimit.HerdstoneConduitNone>Herdstone markers need at least {0} colonists with the 'Herdstone Affinity' gene on this map. Currently: {1}.</BEWH.Abhuman.PlacementLimit.HerdstoneConduitNone>
+    <BEWH.Abhuman.PlacementLimit.HerdstoneConduitLimit>Marker limit reached ({0}/{1}). {2} colonists with the 'Herdstone Affinity' gene are on this map; {3} are needed for another marker.</BEWH.Abhuman.PlacementLimit.HerdstoneConduitLimit>
+    <BEWH.Abhuman.PlacementLimit.HerdstoneConduitMax>Maximum of {0} herdstone markers reached.</BEWH.Abhuman.PlacementLimit.HerdstoneConduitMax>
 
     <!-- Conditionals -->
     <BEWH.Abhuman.Conditional.StatsReport_FeetCovered>feet covered</BEWH.Abhuman.Conditional.StatsReport_FeetCovered>
