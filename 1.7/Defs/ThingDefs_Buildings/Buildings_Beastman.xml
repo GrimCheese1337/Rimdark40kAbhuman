@@ -128,7 +128,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>BEWH_HerdstoneConduitPlayer</defName>
     <label>herdstone marker</label>
-    <description>Small stone markers etched with ancient runes, these serve as conduits for the Herdstone's power. Each of these markers extends the reach of the Herdstone, spreading its influence across a wider area. However, the Herdstone's power is finite and remains unchanged, so the more markers are raised, the more thinly its strength is spread. A greater number of markers provides broader coverage, but weaker protection in any given place.\n\nThe number of Herdstone Markers you can build depends on how many colonists with the 'Herdstone Affinity' gene are present.</description>
+    <description>Small stone markers etched with ancient runes, these serve as conduits for the Herdstone's power. Each of these markers extends the reach of the Herdstone, spreading its influence across a wider area. However, the Herdstone's power is finite and remains unchanged, so the more markers are raised, the more thinly its strength is spread. A greater number of markers provides broader coverage, but weaker protection in any given place.\n\nThe number of markers depends on how many colonists with the 'Herdstone Affinity' gene are on this map: 2 for the first marker, then 4, 5, 7, 9, 10, 14, 17 and 20 for each one after, up to 9 markers.</description>
     <thingClass>Abhuman40k.Building_HerdstoneConduit</thingClass>
     <containedPawnsSelectable>true</containedPawnsSelectable>
     <altitudeLayer>Building</altitudeLayer>
